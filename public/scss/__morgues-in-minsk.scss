@@ -1,0 +1,48 @@
+$color_golg: #ba9f5a;
+$color_text: #5B5B5B;
+$color_blue: #07111d;
+
+.tab {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    overflow: auto;
+
+    & td {
+        text-align: left;
+        border: $color_golg 1px solid;
+        padding: 15px 10px;
+
+        font-family: 'Montserrat';
+        font-size: 14px;
+        line-height: 150%;
+        font-weight: 500;
+        color: $color_text;
+    }
+
+    & tr {
+        
+    }
+
+    // .tab_table
+    &__table {
+        min-width: 1000px;
+        border: $color_golg 1px solid;
+        border-spacing: 0;
+        border-collapse: separate;
+    }
+
+    &__row_1{
+        width: 30%;
+    }
+    &__row_2{
+        width: 20%;
+    }
+    &__row_3{
+        width: 20%;
+    }
+    &__row_4{
+        //width: 40%;
+    }
+}
+
+

@@ -1,0 +1,17 @@
+
+.flex-wreaths{
+    flex: 0 1 22%;
+    display: flex;
+    justify-content: center;
+        
+    @media (max-width: 820px){
+        flex: 0 1 48%;
+    }
+    @media (max-width: 540px){
+        flex: 0 1 90%;
+    }
+}
+
+.card__img_height-wreaths{
+    padding: 0px 0px 170% 0px;
+}

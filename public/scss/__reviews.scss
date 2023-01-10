@@ -1,0 +1,55 @@
+$color_golg: #ba9f5a;
+$color_text: #5B5B5B;
+$color_blue: #07111d;
+
+
+
+.reviews {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 0px 10px 0px 10px;
+    // .reviews__box
+    &__box {
+        padding: 10px 10px 10px 20px;
+        border-left: $color_golg 3px solid;
+        
+    }
+
+    // .reviews__quotes
+    &__quotes img{
+        object-fit: cover;
+        width: auto;
+        height: 50px;
+
+        margin:0px 0px 5px 0px;
+    }
+
+    // .reviews__text
+    &__text {
+        font-family: 'Montserrat';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 170%;
+        color: $color_text;
+
+        margin:0px 0px 10px 0px;
+    }
+
+    // .reviews__name
+    &__name {
+        font-family: 'Montserrat';
+        font-size: 21px;
+        font-weight: 500;
+        line-height: 140%;
+        color: $color_golg;
+
+        margin:0px 0px 10px 0px;
+    }
+
+    // .reviews__stars
+    &__stars img{
+        object-fit: cover;
+        width: auto;
+        height: 20px;
+    }
+}

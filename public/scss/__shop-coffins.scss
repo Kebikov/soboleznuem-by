@@ -1,0 +1,266 @@
+$color_golg: #ba9f5a;
+$color_text: #5B5B5B;
+$color_blue: #07111d;
+
+//= весь блок сортировки 
+._sort-color {
+    background-color: #ba9f5a;
+    color: #fff;
+}
+
+.button-sort {
+    margin: 0 auto;
+    display: flex;
+    max-width: 1200px;
+    @media (max-width: 800px){
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin:0px 10px 0px 10px;
+    }
+    // .button-sort__box
+    &__box {
+        flex: 0 1 20%;
+        display: flex;
+        margin:0px 0px 40px 20px;
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: 500;
+        color: $color_text;
+
+        border: #ba9f5a 2px solid;
+        border-radius: 10px 10px 10px 10px;
+
+        box-shadow: 15px 10px 10px 0px rgba(0, 0, 0, 0.25);
+        //По очереди: x, y, размытие, размер, цвет.
+        cursor: pointer;
+        @media (max-width: 800px){
+            flex: 0 1 50%;
+            order: 2;
+        }
+    }
+    // .button-sort__cheap
+    &__cheap {
+        flex: 0 1 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: #ba9f5a 2px solid;
+        padding: 10px 10px 10px 10px;
+    }
+    // .button-sort__lot
+    &__lot {
+        flex: 0 1 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 17px 10px 17px
+    }
+    //= от и до 
+    //button-sort__praice
+    &__praice{
+        margin: -15px 0px 40px 30px;
+        flex: 0 1 25%;
+        @media (max-width: 800px){
+            flex: 0 1 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            order: 1;
+            margin: 0px 0px 40px 0px;
+        }
+    }
+    //button-sort__title
+    &__title{
+        padding: 0px 0px 5px 0px;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        font-weight: 500;
+        color: $color_text;
+    }
+    //button-sort__praice-box
+    &__praice-box {
+        flex: 0 1 100%;
+        display: flex;
+        border-right: #ba9f5a 2px solid;
+        border: #ba9f5a 2px solid;
+        box-shadow: 15px 10px 10px 0px rgba(0, 0, 0, 0.25);
+        @media (max-width: 800px){
+            width: 95%;
+        }
+    }
+    //button-sort__from
+    &__input {
+        flex: 0 0 50%;
+        padding: 5px 5px 5px 5px;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color_text;
+        text-align: center;
+        @media (max-width: 800px){
+            width: 50%;
+        }
+    }
+}
+._border-right {
+    border-right: #ba9f5a 2px solid;
+}
+
+//= блок магазина 
+.shop{
+    padding: 0px 10px 0px 10px;
+}
+
+.card {
+    flex: 1 1 auto;
+    max-width: 360px;
+    min-width: 250px;
+
+    height: 100%;
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+
+        height: 100%;
+
+        border: #5b5b5b42 3px solid;
+        border-radius: 10px;
+        padding: 0px 0px 10px 0px;
+
+        overflow: hidden;
+    }
+
+    &__title {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: 'Montserrat';
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 5px 10px 5px;
+        background-color: $color_golg;
+
+        @media (max-width: 1910px){
+            font-size: calc(14px + 2 * (100vw - 750px) / 1180);
+        }
+        @media (max-width: 750px){
+            font-size: 14px;
+        }
+    }
+    &__img{
+        position: relative;
+        width: 100%;
+        height: 100%;   
+    }
+    &__img_height{
+        padding: 0px 0px 80% 0px;
+    }
+    &__img img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        padding: 0px 10px 0px 10px;
+    }
+
+    &__prais {
+        font-family: 'Montserrat';
+        font-size: 20px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color_golg;
+        text-align: center;
+        margin: 0px 0px 10px 0px;
+    }
+
+    &__button {
+        font-family: 'Montserrat';
+        font-size: 20px;
+        line-height: 140%;
+        font-weight: 400;
+        color: #fff;
+        background-color: $color_golg;
+        text-align: center;
+        padding: 7px 0px 7px 0px;
+        margin: 0px 20px 0px 20px;
+        border-radius: 7px;
+    }
+}
+
+.flex_coffins{
+    flex: 0 1 32%;
+    display: flex;
+    justify-content: center;
+        
+    @media (max-width: 820px){
+        flex: 0 1 48%;
+    }
+    @media (max-width: 540px){
+        flex: 0 1 90%;
+    }
+}
+
+.shop-block {
+    display: flex;
+    justify-content: space-around;
+    
+    flex-wrap: wrap;
+    gap: 15px;
+
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+
+    &__not {
+        margin:0px 20px 0px 20px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0px 10px 0px;
+
+        border: #ba9f5a 4px solid;
+        border-radius: 10px;
+
+        font-family: 'Montserrat';
+        font-size: 18px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color_text;
+
+    }
+}
+
+.attention {
+    margin: 0 auto 40px auto;
+    max-width: 1200px;
+
+    border: #ba9f5a 3px solid;
+    border-radius: 5px;
+
+    &__text {
+        font-family: 'Montserrat';
+        font-size: 14px;
+        line-height: 180%;
+        font-weight: 600;
+        color: $color_text;
+        text-align: center;
+        //text-transform: uppercase;
+        padding: 20px 10px 20px 10px;
+    }
+}
+

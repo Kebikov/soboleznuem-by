@@ -1,0 +1,86 @@
+$color_golg: #ba9f5a;
+$color_text: #5B5B5B;
+$color_blue: #07111d;
+
+._align {
+    text-align: center;
+}
+
+.tel-contacts {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 400px;
+
+    margin: 0px auto 20px auto;
+
+    &__a1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 0px 20px 0px;
+    }
+&__picture{
+    display: flex;
+    justify-content: flex-end;
+}
+    &__a1-img{
+        flex:0 1 20%;
+
+    }
+    &__a1-img img{
+        
+        object-fit: cover;
+        width: 50%;
+        height: 50%;
+    }
+
+    &__a1-tel {
+        flex:0 1 80%;
+        
+        font-family: 'Montserrat';
+        font-size: 27px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color_text;
+        text-align: center;
+    }
+
+    &__mts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: 0px 0px 10px 0px;
+    }
+
+    &__mts-img{
+        flex:0 1 20%;
+
+    }
+
+    &__mts-img img{
+        object-fit: cover;
+        width: 50%;
+        height: 50%;
+    }
+
+    &__mts-tel {
+        flex: 0 1 80%;
+        font-family: 'Montserrat';
+        font-size: 27px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color_text;
+        text-align: center;
+    }
+
+    &__clock {
+        font-family: 'Montserrat';
+        font-size: 27px;
+        line-height: 140%;
+        font-weight: 600;
+        color: $color_golg;
+        text-align: center;
+    }
+}

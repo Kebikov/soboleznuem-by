@@ -1,0 +1,234 @@
+$brown : #6d4d3a;
+$orange: #fe8d1b;
+$text: #5b4f3c;
+
+.order-call {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    // .order-call__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 650px;
+        background: url(../img/popup/fon.jpg) 0 0 / cover no-repeat;
+        position: relative;
+        @media (max-width: 760px){
+            width: 350px;
+            height: 620px;
+        }
+    }
+    &__x {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        height: 30px;
+        width: 30px;
+        @media (max-width: 760px){
+            top: 10px;
+            right: 10px;
+        }
+        & img {
+            object-fit: cover;
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+        }
+    }
+    &__logo {
+        width: 20%;
+        height: 120px;
+        position: relative;
+        & img {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            @media (max-width: 760px){
+                top: 20px;
+            }
+        }
+    }
+    // .order-call__title
+    &__title {
+        font-family: "Montserrat";
+        font-size: 28px;
+        text-decoration: underline;
+        text-align: center;
+        line-height: 120%;
+        color: #fff;
+        margin: 0px 0px 20px 0px;
+        background-color: rgba(0, 0, 0, 0.461);
+        padding: 10px 20px 10px 20px;
+        @media (max-width: 1910px){
+            font-size: calc(24px + 4 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 24px;
+        }
+    }
+    // .order-call__text
+    &__text {
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.684);
+        text-align: center;
+        line-height: 140%;
+        padding: 0px 20px 0px 20px;
+        margin: 0px 0px 20px 0px;
+    }
+    // .order-call__form
+    &__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    // .order-call__name
+    &__name {
+        width: 60%;
+        border: #818181 2px solid;
+        padding: 10px 0px 10px 10px;
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-weight: 500;
+        color: $text;
+        margin: 0px 0px 20px 0px;
+        @media (max-width: 760px){
+            width: 80%;
+        }
+    }
+    &__tel-div {
+        width: 60%;
+        position: relative;
+        @media (max-width: 760px){
+            width: 80%;
+        }
+    }
+    // .order-call__tel
+    &__tel {
+        width: 100%;
+        border: #818181 2px solid;
+        padding: 10px 0px 10px 10px;
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-weight: 500;
+        color: $text;
+        margin: 0px 0px 40px 0px;
+        @media (max-width: 760px){
+            width: 100%;
+        }
+    }
+    // .order-call__button
+    &__button {
+        width: 60%;
+        font-family: "Montserrat";
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+        padding: 10px 40px 10px 40px;
+        background: linear-gradient(195deg, rgba(0,0,0,1) 0%, rgba(170,170,170,1) 45%, rgba(0,0,0,1) 100%);
+        margin: 0px 0px 20px 0px;
+        box-shadow: 0px 0px 7px 2px rgba(87, 87, 87, 0.609);
+        cursor: pointer;
+        @media (max-width: 760px){
+            width: 80%;
+        }
+    }
+    &__email {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        & img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}
+
+.anime-meil {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.701);
+    // .anime-meil__body
+    &__body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    // .anime-meil__box
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__text {
+        font-family: "Montserrat";
+        font-size: 17px;
+        letter-spacing: 1.2px;
+        color: #fff;
+    }
+    // .anime-meil__meil
+    &__meil {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+        & img {
+            object-fit: cover;
+            height: 100%;
+            width: 80px;
+            animation: anim-mail 2s infinite;
+        }
+    }
+}
+
+@keyframes anim-mail {
+    from {
+        transform: scale(1);
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+    }
+    10% {
+        transform: scale(0.91);
+        animation-timing-function: ease-in;
+    }
+    17% {
+        transform: scale(0.98);
+        animation-timing-function: ease-out;
+    }
+    33% {
+        transform: scale(0.87);
+        animation-timing-function: ease-in;
+    }
+    45% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}

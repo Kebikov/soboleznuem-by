@@ -1,0 +1,38 @@
+.form-admin {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    font-family: 'Montserrat';
+    color: #5B5B5B;
+    // .form-admin__label
+
+    &__label {
+        font-size: 24px;
+        margin: 20px 0px 0px 0px;
+    }
+
+    // .form-admin__input
+
+    &__input {
+        border: 1px #000 solid;
+        width: 350px;
+        resize: vertical;
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    &__button {
+        margin: 20px 0px 0px 0px;
+        padding: 10px 20px 10px 20px;
+        background-color: #ba9f5a;
+        color: #fff;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+    }
+}
+
+.form-body {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,47 @@
+$color_golg: #ba9f5a;
+$color_text: #5B5B5B;
+$color_blue: #07111d;
+
+.text-title {
+    font-family: 'Montserrat';
+        font-size: 27px;
+        line-height: 140%;
+        font-weight: 500;
+        color: $color_golg;
+        margin-bottom: 20px;
+
+
+        @media (max-width: 1910px){
+            font-size: calc(21px + 6 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 21px;
+        }
+
+        &_margin{
+            margin: 0px 10px 0px 10px;
+        }
+}
+
+.text {
+    
+    &__list {
+    }
+
+    &__line {
+        position: relative;
+        margin: 0px 0px 10px 17px;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: -17px;
+
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $color_golg;
+        }
+    }
+}
+
