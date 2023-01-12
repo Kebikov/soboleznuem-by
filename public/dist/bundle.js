@@ -1,2 +1,1291 @@
-(()=>{"use strict";window.addEventListener("DOMContentLoaded",(()=>{(function(){try{!function(){function e(e){if(window.innerWidth>1020){const t=e.target.closest(".header__line"),s=t.querySelector(".header__list-sub");function c(e){const c=t.querySelectorAll(".header__line-sub");s.classList.add("hover-sub"),c.forEach((function(e){e.classList.add("hover-sub")})),t.querySelectorAll(".header__link-sub").forEach((function(e){e.classList.add("hover-sub")}))}function l(e){const c=t.querySelectorAll(".header__line-sub");s.classList.remove("hover-sub"),c.forEach((function(e){e.classList.remove("hover-sub")})),t.querySelectorAll(".header__link-sub").forEach((function(e){e.classList.remove("hover-sub")}))}s.classList.add("hover-sub"),s.addEventListener("mouseover",c),s.addEventListener("mouseout",l),t.querySelectorAll(".header__line-sub").forEach((function(e){e.classList.add("hover-sub")})),t.querySelectorAll(".header__link-sub").forEach((function(e){e.classList.add("hover-sub")}))}}function t(e){const t=e.target.closest(".header__line");t.querySelector(".header__list-sub").classList.remove("hover-sub"),t.querySelectorAll(".header__line-sub").forEach((function(e){e.classList.remove("hover-sub")})),t.querySelectorAll(".header__link-sub").forEach((function(e){e.classList.remove("hover-sub")}))}document.addEventListener("click",(function(e){const t=e.target;if(t.closest(".header__button")){document.querySelector("body").classList.toggle("active");const e=t.closest(".header__button");e.classList.toggle("active"),e.closest(".header__burger").classList.toggle("active"),document.querySelectorAll(".header__line").forEach((function(e){e.classList.toggle("active")})),document.querySelectorAll(".header__link").forEach((function(e){e.classList.toggle("active")})),t.classList.contains("active")||document.querySelectorAll(".active-sub").forEach((function(e){e.classList.remove("active-sub")}))}if(t.closest(".header__line")&&window.innerWidth<=1020){const e=t.closest(".header__line");e.querySelector(".header__link").classList.contains("_sub")&&e.classList.toggle("active-sub"),e.querySelectorAll(".header__list-sub").forEach((function(e){e.classList.toggle("active-sub")})),e.querySelectorAll(".header__line-sub").forEach((function(e){e.classList.toggle("active-sub")})),e.querySelectorAll(".header__link-sub").forEach((function(e){e.classList.toggle("active-sub")}))}})),window.addEventListener("scroll",(function(){a(),c<=window.scrollY?(s.classList.add("fix-burger"),l.classList.add("fix-burger")):(s.classList.remove("fix-burger"),l.classList.remove("fix-burger"))})),document.querySelectorAll("._sub").forEach((function(s){s.addEventListener("mouseover",e),s.addEventListener("mouseout",t)}));const s=document.querySelector(".header__burger"),c=s.getBoundingClientRect().top,l=document.querySelector(".header__list");function a(){const e=document.documentElement.clientHeight-s.getBoundingClientRect().bottom;l.style.cssText=`max-height: ${e}px;`}a();const o=document.querySelector(".age-17");if(o){window.addEventListener("scroll",d);let i=0,r=o.getBoundingClientRect().bottom-document.documentElement.clientHeight;function d(){window.scrollY>=r&&0===i&&(function(){const e=document.getElementById("age");let t=Number(e.dataset.time),s=Number(e.dataset.start),c=Number(e.dataset.end);const l=document.getElementById("age1");let a=Number(l.dataset.time),o=Number(l.dataset.start),i=Number(l.dataset.end);const r=document.getElementById("burial");let d=Number(r.dataset.time),_=Number(r.dataset.start),u=Number(r.dataset.end);const m=document.getElementById("cremation");n(Number(m.dataset.time),Number(m.dataset.start),Number(m.dataset.end),m),n(t,s,c,e),n(a,o,i,l),n(d,_,u,r)}(),i=1)}}function n(e,t,s,c){const l=e/s;let a=1;l<10&&(a=Math.trunc(10/l));let o=setTimeout(n,l,e,a+t,s,c);t>=s&&(clearTimeout(o),t=s),c.innerText=t+"+"}}()}catch(e){console.log("",e)}})(),function(){try{const e=document.querySelector(".shop-calc");if(e){document.forms.calc;let t,s=0;document.addEventListener("click",(function(c){const l=c.target;if(l.closest(".coffin__tim")){const e=l.closest(".coffin").querySelectorAll(".coffin__item, .coffin__img, .coffin__label");for(let t of e)t.classList.toggle("active")}if(l.closest(".coffin__item")){s++;const c=l.closest(".coffin");let a=c.dataset.total;a||(t=s),c.dataset.total=t;const o=l.closest(".coffin__item"),n=o.querySelector(".coffin__img").getAttribute("src"),i=o.querySelector(".coffin__label").innerHTML,r=o.querySelector(".coffin__label").dataset.cash,d=c.querySelector(".coffin__tim-title");c.querySelector(".coffin__img-tim").setAttribute("src",n),d.innerHTML=i;let _=e.lastElementChild;if(document.querySelector(`[data-shop = "${a}"]`)){const e=document.querySelector(`[data-shop = "${a}"]`),s=e.previousSibling;e.remove(),_=s,t=a}_.insertAdjacentHTML("afterend",`<div class="shop-calc__list" data-shop="${t}" data-shop-cash = "${r}">\n                            <div class="shop-calc__img-box">\n                                <img src="${n}" alt="#">\n                            </div>\n                            <div class="shop-calc__info">\n                                <div class="shop-calc__text">${i}</div>\n                                <div class="shop-calc__cash">стоимость: ${r} руб.</div>\n                            </div>\n                            <div class="shop-calc__delete">\n                                <img src="/img/__calc/delete_icon.png" alt="#">\n                            </div>\n                        </div>`);const u=l.closest(".coffin").querySelectorAll(".coffin__item, .coffin__img, .coffin__label");for(let e of u)e.classList.remove("active")}if(l.closest(".wreath__tim")){const e=l.closest(".wreath").querySelectorAll(".wreath__item, .wreath__img, .wreath__label");for(let t of e)t.classList.toggle("active")}if(l.closest(".wreath__item")){s++;const t=l.closest(".wreath");let c=t.dataset.total;c||(t.dataset.total=s,c=t.dataset.total);const a=l.closest(".wreath__item"),o=a.querySelector(".wreath__img").getAttribute("src"),n=a.querySelector(".wreath__label").innerHTML;console.log("textCoffin",n);const i=a.querySelector(".wreath__label").dataset.cash,r=t.querySelector(".wreath__tim-title");t.querySelector(".wreath__img-tim").setAttribute("src",o),r.innerHTML=n;const d=l.closest(".wreath").querySelectorAll(".wreath__item, .wreath__img, .wreath__label");for(let e of d)e.classList.remove("active");let _=e.lastElementChild;if(document.querySelector(`[data-shop = "${c}"]`)){const e=document.querySelector(`[data-shop = "${c}"]`),t=e.previousSibling;e.remove(),_=t}_.insertAdjacentHTML("afterend",`<div class="shop-calc__list" data-shop="${c}" data-shop-cash = "${i}">\n                            <div class="shop-calc__img-box">\n                                <img src="${o}" alt="#">\n                            </div>\n                            <div class="shop-calc__info">\n                                <div class="shop-calc__text">${n}</div>\n                                <div class="shop-calc__cash">стоимость: ${i} руб.</div>\n                            </div>\n                            <div class="shop-calc__delete">\n                                <img src="/img/__calc/delete_icon.png" alt="#">\n                            </div>\n                        </div>`)}if(l.closest(".dress__tim")){const e=l.closest(".dress").querySelectorAll(".dress__item, .dress__img, .dress__label");for(let t of e)t.classList.toggle("active")}if(l.closest(".dress__item")){s++;const t=l.closest(".dress");let c=t.dataset.total;c||(t.dataset.total=s,c=t.dataset.total);const a=l.closest(".dress__item"),o=a.querySelector(".dress__img").getAttribute("src"),n=a.querySelector(".dress__label").innerHTML,i=a.querySelector(".dress__label").dataset.cash,r=t.querySelector(".dress__tim-title");t.querySelector(".dress__img-tim").setAttribute("src",o),r.innerHTML=n;const d=l.closest(".dress").querySelectorAll(".dress__item, .dress__img, .dress__label");for(let e of d)e.classList.remove("active");let _=e.lastElementChild;if(document.querySelector(`[data-shop = "${c}"]`)){const e=document.querySelector(`[data-shop = "${c}"]`),t=e.previousSibling;e.remove(),_=t}_.insertAdjacentHTML("afterend",`<div class="shop-calc__list" data-shop="${c}" data-shop-cash = "${i}">\n                            <div class="shop-calc__img-box">\n                                <img src="${o}" alt="#">\n                            </div>\n                            <div class="shop-calc__info">\n                                <div class="shop-calc__text">${n}</div>\n                                <div class="shop-calc__cash">стоимость: ${i} руб.</div>\n                            </div>\n                            <div class="shop-calc__delete">\n                                <img src="/img/__calc/delete_icon.png" alt="#">\n                            </div>\n                        </div>`)}if(l.closest(".cross__tim")){const e=l.closest(".cross").querySelectorAll(".cross__item, .cross__img, .cross__label");for(let t of e)t.classList.toggle("active")}if(l.closest(".cross__item")){s++;const t=l.closest(".cross");let c=t.dataset.total;c||(t.dataset.total=s,c=t.dataset.total);const a=l.closest(".cross__item"),o=a.querySelector(".cross__img").getAttribute("src"),n=a.querySelector(".cross__label").innerHTML,i=a.querySelector(".cross__label").dataset.cash,r=t.querySelector(".cross__tim-title");t.querySelector(".cross__img-tim").setAttribute("src",o),r.innerHTML=n;const d=l.closest(".cross").querySelectorAll(".cross__item, .cross__img, .cross__label");for(let e of d)e.classList.remove("active");let _=e.lastElementChild;if(document.querySelector(`[data-shop = "${c}"]`)){const e=document.querySelector(`[data-shop = "${c}"]`),t=e.previousSibling;e.remove(),_=t}_.insertAdjacentHTML("afterend",`<div class="shop-calc__list" data-shop="${c}" data-shop-cash = "${i}">\n                            <div class="shop-calc__img-box">\n                                <img src="${o}" alt="#">\n                            </div>\n                            <div class="shop-calc__info">\n                                <div class="shop-calc__text">${n}</div>\n                                <div class="shop-calc__cash">стоимость: ${i} руб.</div>\n                            </div>\n                            <div class="shop-calc__delete">\n                                <img src="/img/__calc/delete_icon.png" alt="#">\n                            </div>\n                        </div>`)}if(l.closest(".shop-calc__delete")){const e=l.closest(".shop-calc__list");let t=e.dataset.shop;e.remove();const s=document.querySelector(`[data-total = "${t}"]`),c=s.querySelector("[data-img]"),a=s.querySelector("[data-title]");let o=a.dataset.title,n=c.dataset.img;c.setAttribute("src",`${n}`),a.textContent=`${o}`}if(l.closest(".more")){const e=l.previousElementSibling.classList.value;if(s++,"wreath"===e){const e=document.querySelectorAll(".wreath");e[e.length-1].insertAdjacentHTML("afterend",`<div class="title-calc">Ваш выбор ритуального венка:</div>\n                            <div class="wreath" data-total="${s}">\n                                <div class="wreath__tim">\n                                    <img class="wreath__img-tim" src="/img/__calc/wreath/icon.png" alt="#" data-img="/img/__calc/wreath/icon.png">\n                                    <span class="wreath__tim-title" data-all="0" data-title="Выбор венка">Выбор венка</span>\n                                </div>\n                                <div class="wreath__item">\n                                    <img class="wreath__img" src="/img/__calc/wreath/1.png" alt="#">\n                                    <div class="wreath__label" data-cash="121">Венок ритуальный<br>(1.7 метра)</div>\n                                </div>\n                                <div class="wreath__item">\n                                    <img class="wreath__img" src="/img/__calc/wreath/2.png" alt="#">\n                                    <div class="wreath__label" data-cash="89">Венок ритуальный<br>(1.5 метра)</div>\n                                </div>\n                                <div class="wreath__item">\n                                    <img class="wreath__img" src="/img/__calc/wreath/3.png" alt="#">\n                                    <div class="wreath__label" data-cash="42">Венок ритуальный<br>(1.3 метра)</div>\n                                </div>\n                            </div>`)}if("dress"===e){const e=document.querySelectorAll(".dress");e[e.length-1].insertAdjacentHTML("afterend",`<div class="title-calc">Комплект одежды для усопшего:</div>\n                            <div class="dress" data-total="${s}">\n                                <div class="dress__tim">\n                                    <img class="dress__img-tim" src="/img/__calc/dress/dress-icon.png" alt="#" data-img="/img/__calc/dress/dress-icon.png">\n                                    <span class="dress__tim-title" data-all="0" data-title="Выбор одежды">Выбор одежды</span>\n                                </div>\n                                <div class="dress__item">\n                                    <img class="dress__img" src="/img/__calc/dress/1.jpg" alt="#">\n                                    <div class="dress__label" data-cash="55">Костюм женский</div>\n                                </div>\n                                <div class="dress__item">\n                                    <img class="dress__img" src="/img/__calc/dress/2.jpg" alt="#">\n                                    <div class="dress__label" data-cash="35">Обувь женская</div>\n                                </div>\n                                <div class="dress__item">\n                                    <img class="dress__img" src="/img/__calc/dress/3.jpg" alt="#">\n                                    <div class="dress__label" data-cash="46">Костюм мужской</div>\n                                </div>\n                                <div class="dress__item">\n                                    <img class="dress__img" src="/img/__calc/dress/4.jpg" alt="#">\n                                    <div class="dress__label" data-cash="37">Туфли мужские</div>\n                                </div>\n                            </div>`)}}if(!l.closest(".stop")&&l.closest(".start")){let t=l.parentElement,s=t.dataset.checkId,c=t.querySelector("input"),a=t.querySelector("label"),o=e.lastElementChild;if(c)if(c.checked){let e=a.textContent,c=t.dataset.praice;o.insertAdjacentHTML("afterend",`<div class="check" data-shop-cash="${c}" data-check-id="${s}">\n                                <div class="check__img">\n                                    <img src="/img/__calc/check-icon-shop.png" alt="">\n                                </div>\n                                <div class="check__info">\n                                    <div class="check__title">${e}</div>\n                                    <div class="check__praice">стоимость: ${c} руб.</div>\n                                </div>\n                                <div class="check__del">\n                                    <img src="/img/__calc/delete_icon.png" alt="">\n                                </div>\n                            </div>`)}else{let t=c.getAttribute("name");e.querySelector(`[data-check-id="${t}"]`)&&e.querySelector(`[data-check-id="${t}"]`).remove()}}if(l.closest(".check")){let t=l.closest(".check").dataset.checkId;e.querySelector(`[data-check-id="${t}"]`).remove(),document.querySelector(`.${t}`).querySelector("input").checked=!1}let a=0;const o=document.querySelectorAll("[data-shop-cash]");for(let e of o)a+=1*e.dataset.shopCash;document.querySelector(".praice").innerHTML=`Всего: ${a} руб.`}));const c=new IntersectionObserver((e=>{e.forEach((e=>{e.isIntersecting?a.classList.add("stiki"):a.classList.remove("stiki")}))}),{}),l=document.querySelector(".footer");c.observe(l);const a=document.querySelector(".praice")}}catch(e){console.log(e)}}(),function(){try{document.querySelector("[data-json]"),function(){const e=document.querySelector(".shop-block"),t=document.querySelector(".button-sort"),s=document.querySelector(".button-sort__praice-box"),c=document.querySelector('[name="from"]'),l=document.querySelector('[name="before"]'),a=e.getAttribute("data-json");let o=0,n=0;function i(t){"ajax/coffins.json"===a&&t.forEach((t=>{e.insertAdjacentHTML("beforeend",`\n                        <div class="shop-block__item flex_coffins">\n                                    <div class="card">\n                                        <div class="card__body">\n                                            <div class="card__title">${t.title}</div>\n                                            <div class="card__img card__img_height">\n                                                <picture>\n                                                    <source srcset='${t.img1}'>\n                                                    <source srcset='${t.img2}'>\n                                                    <source srcset='${t.img3}'>\n                                                    <img src='${t.img4}' alt="гроб">\n                                                </picture>\n                                            </div>\n                                            <div class="card__prais">${t.prais}</div>\n                                            <a class="card__button" href="contacts.html">купить</a>\n                                        </div>\n                                    </div>\n                                </div>\n                        `)})),"ajax/wreaths.json"===a&&t.forEach((t=>{e.insertAdjacentHTML("beforeend",`\n                        <div class="shop-block">    \n                            <div class="shop-block__item  flex-wreaths">\n                                <div class="card">\n                                    <div class="card__body">\n                                        <div class="card__title">${t.title}</div>\n                                        <div class="card__img card__img_height-wreaths">\n                                            <picture>\n                                                <source srcset=${t.img1} type="image/webp">\n                                                <img src=${t.img2} alt="Венок ритуальный">\n                                            </picture>\n                                    </div>\n                                    <div class="card__prais">${t.prais}</div>\n                                    <a class="card__button" href="contacts.html">купить</a>\n                                </div>\n                            </div>\n                        </div>\n                        `)}))}function r(e){return e.sort(_)}function d(e){return r(e).reverse()}function _(e,t){let s=+`${e.prais}`.match(/\d+.?\d+?/g).join(""),c=+`${t.prais}`.match(/\d+.?\d+?/g).join("");return s>c?1:s<c?-1:s===c?0:void 0}function u(e){document.querySelectorAll("._sort-color").forEach((e=>{e.classList.remove("_sort-color")})),e.classList.add("_sort-color")}function m(t){n=c.value?+c.value:0,o=l.value?+l.value:1e4,fetch(a).then((e=>e.json())).then((s=>{e.innerHTML="";let c=s.filter(((e,t,s)=>{let c=+e.prais.match(/\d+.?\d+?/g).join("");if(o>c&&c>n)return s}));c.length||e.insertAdjacentHTML("beforeend",'<div class="shop-block__not">Извините, нет подходящих товаров.</div>'),i(t(c))}))}fetch(a).then((e=>e.json())).then((e=>{i(d(e))})),t.addEventListener("click",(e=>{let t=e.target;t.classList.contains("button-sort__cheap")&&(u(t),m(r)),t.classList.contains("button-sort__lot")&&(u(t),m(d))})),s.addEventListener("input",(()=>{document.querySelector("._sort-color").classList.contains("button-sort__lot")?m(d):m(r)}))}()}catch(e){console.log("",e)}}(),function(){try{const e=document.querySelector(".order-call");!function(){const e=document.querySelector(".order-call"),t=document.querySelectorAll('[data-popup="open"]'),s=e.querySelector(".order-call__title"),c=document.body;t.forEach((t=>{t.addEventListener("click",(()=>{e.style.display="flex",c.style.overflow="hidden",t.hasAttribute("data-name-button")&&(s.textContent=t.getAttribute("data-name-button"))}))})),e.addEventListener("click",(t=>{c.style.overflow="auto",t.target.closest(".order-call__x")&&(e.style.display="none")}))}(),function(){const e=document.querySelector(".order-call__tel"),t=document.querySelector(".order-call__tel-div");e.addEventListener("click",(()=>function(e,t,s,{classOne:c,classTwo:l}){try{function a(t,s){e.value.length===t&&(e.value=e.value.slice(0,t-1)+s+e.value[t-1])}e.value="+375",e.addEventListener("input",(()=>{"("===e.value[e.value.length-1]||")"===e.value[e.value.length-1]||"-"===e.value[e.value.length-1]?e.value=e.value.slice(0,e.value.length-1):(e.value.length<4&&(e.value="+375"),a(5,"("),a(8,")"),a(12,"-"),a(15,"-"),e.value.length>16&&(e.value=e.value.slice(0,17)),/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(e.value)?(0===s&&(t.style.boxShadow="0px 0px 2px 2px rgba(22, 255, 138, 0.663) inset"),1===s&&(e.style.border="#28b352 2px solid")):(0===s&&(t.style.boxShadow="0px 0px 3px 3px rgba(255, 22, 22, 0.9) inset"),1===s&&(e.style.border="#ec3c3c 2px solid"))),17===e.value.length&&/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(e.value)?t.classList.contains(c)&&(t.classList.remove(c),t.classList.add(l)):t.classList.contains(l)&&(t.classList.remove(l),t.classList.add(c))}))}catch(o){console.log("",o)}}(e,t,1,{classOne:"_grey",classTwo:"_green"})))}();const t=document.querySelector(".order-call__name");!function(){const s=document.querySelector(".order-call__button"),c=document.querySelector(".order-call__tel"),l=document.body,a=document.querySelector(".anime-meil");s.addEventListener("click",(function(o){let n=document.querySelector(".order-call__title").textContent;console.log("",n),o.preventDefault,t.value.length<3&&(t.value="",t.setAttribute("placeholder","Минимум 3 символа."));const i=document.forms.popup;if(17===c.value.length&&/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(c.value)&&t.value){let o=new FormData(i);o.set("title",n),l.style.overflow="hidden",a.style.display="block",fetch("popup.php",{method:"POST",body:o}).then((o=>{200===o.status&&(l.style.overflow="auto",a.style.display="none",s.textContent="заявка отправлена",t.value="",c.value="Cпасибо за заказ !",setTimeout((()=>{e.style.display="none"}),1500))}))}else s.textContent="проверьте данные",setTimeout((()=>{s.textContent="заказать по акции"}),2e3)}))}()}catch(e){console.log("",e)}}(),function(){try{const e=document.querySelectorAll("[data-textPrace]"),t=document.querySelector("[data-prace]"),s=(new Date).getTime();e&&fetch(`../../ajax/posobie.json?v=${s}`).then((e=>e.json())).then((t=>{e.forEach((e=>{e.innerHTML=t.textPrace}))})),t&&fetch(`../../ajax/posobie.json?v=${s}`).then((e=>e.json())).then((e=>{t.innerHTML=e.prace}))}catch(e){console.log(e)}}(),async function(){document.querySelector(".coffin-img")&&await fetch("https://api.ipify.org?format=json").then((e=>e.json())).then((e=>{const t=e.ip;fetch("/",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({ip:t})}).then((e=>console.log("Status Fetch >>>",e.status))).catch((e=>console.log("Error fetch >>>",e)))}))}()}))})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./public/js/modules/calc.js":
+/*!***********************************!*\
+  !*** ./public/js/modules/calc.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ calcFn)
+/* harmony export */ });
+function calcFn () {
+    try {
+            //находим раздел с выбранными товарами
+            const shopForm = document.querySelector('.shop-calc');
+            if(shopForm) {
+            //получение формы calc
+                const formCalc = document.forms.calc;
+                let idTotal = 0;
+                let numCoffin, numWreath;
+                document.addEventListener('click', function (e){
+                    const element = e.target;
+                    //console.log('element',element);
+                    
+                    //= гроб 
+                    if(element.closest('.coffin__tim')){
+                        const elementParent = element.closest('.coffin');
+                        const coffinItems = elementParent.querySelectorAll('.coffin__item, .coffin__img, .coffin__label');
+                        for(let i of coffinItems){
+                            i.classList.toggle('active');
+                        }
+                    }
+                    // клик на выбор гроба
+                    if(element.closest('.coffin__item')){
+                        //новое значение id
+                        idTotal++;
+        
+                        //получение главного родителя 
+                        const mainParent = element.closest('.coffin');
+        
+                        //получение текушего значения data-total
+                        let dataTotal = mainParent.dataset.total;
+        
+                        //проверка на сушествование id
+                        if(!dataTotal){
+                            numCoffin = idTotal;
+                        }
+        
+                        //новое значение data-total
+                        mainParent.dataset.total = numCoffin;
+        
+                        const textParent = element.closest('.coffin__item');
+                        const imgCoffinElement = textParent.querySelector('.coffin__img');
+                        const imgCoffinSrc = imgCoffinElement.getAttribute('src');
+                        const textCoffin = textParent.querySelector('.coffin__label').innerHTML;
+                        const cashCoffin = textParent.querySelector('.coffin__label').dataset.cash;
+                        const title = mainParent.querySelector('.coffin__tim-title');
+                        mainParent.querySelector('.coffin__img-tim').setAttribute('src', imgCoffinSrc);
+                        title.innerHTML = textCoffin;
+        
+                        //возврат последнего эл в магазине
+                        let lastElementShop = shopForm.lastElementChild;
+        
+                        //удаляем товар если уже есть в списке
+                        //поиск совпадения в выборе и магазине
+                        if(document.querySelector(`[data-shop = "${dataTotal}"]`)){
+                            //возврат эл магазина
+                            const shopElement = document.querySelector(`[data-shop = "${dataTotal}"]`);
+                            //возврат эл перед 
+                            const shopElementPrevious = shopElement.previousSibling;
+                            //удаление элемента
+                            shopElement.remove();
+                            //замена эл после которого будет вставлен новый эл
+                            lastElementShop = shopElementPrevious;
+                            numCoffin = dataTotal;
+                        }
+        
+                        //добавляем новый элемент в выбранные товары
+                        lastElementShop.insertAdjacentHTML(
+                            'afterend',
+                            `<div class="shop-calc__list" data-shop="${numCoffin}" data-shop-cash = "${cashCoffin}">
+                            <div class="shop-calc__img-box">
+                                <img src="${imgCoffinSrc}" alt="#">
+                            </div>
+                            <div class="shop-calc__info">
+                                <div class="shop-calc__text">${textCoffin}</div>
+                                <div class="shop-calc__cash">стоимость: ${cashCoffin} руб.</div>
+                            </div>
+                            <div class="shop-calc__delete">
+                                <img src="/img/__calc/delete_icon.png" alt="#">
+                            </div>
+                        </div>`
+                        );
+        
+                        
+        
+                        //удаляем классы active
+                        const elementParent = element.closest('.coffin');
+                        const coffinItems = elementParent.querySelectorAll('.coffin__item, .coffin__img, .coffin__label');
+                        for(let i of coffinItems){
+                            i.classList.remove('active');
+                        }
+                    }
+        
+                    //= Венки 
+                    if(element.closest('.wreath__tim')){
+                        const elementParent = element.closest('.wreath');
+                        const coffinItems = elementParent.querySelectorAll('.wreath__item, .wreath__img, .wreath__label');
+                        for(let i of coffinItems){
+                            i.classList.toggle('active');
+                        }
+                    }
+                    // клик на выборе венка
+                    if(element.closest('.wreath__item')){
+                        //новое значение id
+                        idTotal++;
+                        //получение главного родителя 
+                        const mainParent = element.closest('.wreath');
+                        //получение текушего значения data-total
+                        let dataTotal = mainParent.dataset.total;
+                        //проверка на сушествование id
+                        if(!dataTotal){
+                            //новое значение data-total
+                            mainParent.dataset.total =  idTotal;
+                            dataTotal = mainParent.dataset.total;
+                        }
+                        const textParent = element.closest('.wreath__item');
+                        const imgCoffinElement = textParent.querySelector('.wreath__img');
+                        const imgCoffinSrc = imgCoffinElement.getAttribute('src');
+                        const textCoffin = textParent.querySelector('.wreath__label').innerHTML;
+                        console.log('textCoffin',textCoffin);
+                        const cashCoffin = textParent.querySelector('.wreath__label').dataset.cash;
+                        const title = mainParent.querySelector('.wreath__tim-title');
+                        //mainParent.querySelector('.wreath__tim-title').dataset.all = cashCoffin;
+                        mainParent.querySelector('.wreath__img-tim').setAttribute('src', imgCoffinSrc);
+                        title.innerHTML = textCoffin;
+        
+                        const elementParent = element.closest('.wreath');
+                        const coffinItems = elementParent.querySelectorAll('.wreath__item, .wreath__img, .wreath__label');
+                        for(let i of coffinItems){
+                            i.classList.remove('active');
+                        }
+        
+                        //возврат последнего эл в магазине
+                        let lastElementShop = shopForm.lastElementChild;
+                        
+        
+                        //удаляем товар если уже есть в списке
+                        //поиск совпадения в выборе и магазине
+                        if(document.querySelector(`[data-shop = "${dataTotal}"]`)){
+                            //возврат эл магазина
+                            const shopElement = document.querySelector(`[data-shop = "${dataTotal}"]`);
+                            //возврат эл перед 
+                            const shopElementPrevious = shopElement.previousSibling;
+                            //удаление элемента
+                            shopElement.remove();
+                            //замена эл после которого будет вставлен новый эл
+                            lastElementShop = shopElementPrevious;
+                        }
+        
+                        //добавление эл в магазин
+                        lastElementShop.insertAdjacentHTML(
+                            'afterend',
+                            `<div class="shop-calc__list" data-shop="${dataTotal}" data-shop-cash = "${cashCoffin}">
+                            <div class="shop-calc__img-box">
+                                <img src="${imgCoffinSrc}" alt="#">
+                            </div>
+                            <div class="shop-calc__info">
+                                <div class="shop-calc__text">${textCoffin}</div>
+                                <div class="shop-calc__cash">стоимость: ${cashCoffin} руб.</div>
+                            </div>
+                            <div class="shop-calc__delete">
+                                <img src="/img/__calc/delete_icon.png" alt="#">
+                            </div>
+                        </div>`
+                        );
+                    }
+        
+                    //= Одежда 
+                    if(element.closest('.dress__tim')){
+                        const elementParent = element.closest('.dress');
+                        const coffinItems = elementParent.querySelectorAll('.dress__item, .dress__img, .dress__label');
+                        for(let i of coffinItems){
+                            i.classList.toggle('active');
+                        }
+                    }
+                    // клик на выборе одежды 
+                    if(element.closest('.dress__item')){
+                        //новое значение id
+                        idTotal++;
+                        //получение главного родителя 
+                        const mainParent = element.closest('.dress');
+        
+                        //получение текушего значения data-total
+                        let dataTotal = mainParent.dataset.total;
+                        //проверка на сушествование id
+                        if(!dataTotal){
+                            //новое значение data-total
+                            mainParent.dataset.total =  idTotal;
+                            dataTotal = mainParent.dataset.total;
+                        }
+        
+                        const textParent = element.closest('.dress__item');
+                        const imgCoffinElement = textParent.querySelector('.dress__img');
+                        const imgCoffinSrc = imgCoffinElement.getAttribute('src');
+                        const textCoffin = textParent.querySelector('.dress__label').innerHTML;
+                        const cashCoffin = textParent.querySelector('.dress__label').dataset.cash;
+                        const title = mainParent.querySelector('.dress__tim-title');
+                        //mainParent.querySelector('.dress__tim-title').dataset.all = cashCoffin;
+                        mainParent.querySelector('.dress__img-tim').setAttribute('src', imgCoffinSrc);
+                        title.innerHTML = textCoffin;
+        
+                        const elementParent = element.closest('.dress');
+                        const coffinItems = elementParent.querySelectorAll('.dress__item, .dress__img, .dress__label');
+                        for(let i of coffinItems){
+                            i.classList.remove('active');
+                        }
+        
+                        //возврат последнего эл в магазине
+                        let lastElementShop = shopForm.lastElementChild;
+                        //удаляем товар если уже есть в списке
+                        //поиск совпадения в выборе и магазине
+                        if(document.querySelector(`[data-shop = "${dataTotal}"]`)){
+                            //возврат эл магазина
+                            const shopElement = document.querySelector(`[data-shop = "${dataTotal}"]`);
+                            //возврат эл перед 
+                            const shopElementPrevious = shopElement.previousSibling;
+                            //удаление элемента
+                            shopElement.remove();
+                            //замена эл после которого будет вставлен новый эл
+                            lastElementShop = shopElementPrevious;
+                        }
+        
+                        //добавление эл в магазин(не меняем переменные внутри)
+                        lastElementShop.insertAdjacentHTML(
+                            'afterend',
+                            `<div class="shop-calc__list" data-shop="${dataTotal}" data-shop-cash = "${cashCoffin}">
+                            <div class="shop-calc__img-box">
+                                <img src="${imgCoffinSrc}" alt="#">
+                            </div>
+                            <div class="shop-calc__info">
+                                <div class="shop-calc__text">${textCoffin}</div>
+                                <div class="shop-calc__cash">стоимость: ${cashCoffin} руб.</div>
+                            </div>
+                            <div class="shop-calc__delete">
+                                <img src="/img/__calc/delete_icon.png" alt="#">
+                            </div>
+                        </div>`
+                        );
+                    }//end 
+        
+                    //= Крест 
+                    if(element.closest('.cross__tim')){
+                        const elementParent = element.closest('.cross');
+                        const coffinItems = elementParent.querySelectorAll('.cross__item, .cross__img, .cross__label');
+                        for(let i of coffinItems){
+                            i.classList.toggle('active');
+                        }
+                    }
+                    // клик на выборе креста 
+                    if(element.closest('.cross__item')){
+                        //новое значение id
+                        idTotal++;
+                        //получение главного родителя 
+                        const mainParent = element.closest('.cross');
+                        //получение текушего значения data-total
+                        let dataTotal = mainParent.dataset.total;
+                        //проверка на сушествование id
+                        if(!dataTotal){
+                            //новое значение data-total
+                            mainParent.dataset.total =  idTotal;
+                            dataTotal = mainParent.dataset.total;
+                        }
+                        const textParent = element.closest('.cross__item');
+                        const imgCoffinElement = textParent.querySelector('.cross__img');
+                        const imgCoffinSrc = imgCoffinElement.getAttribute('src');
+                        const textCoffin = textParent.querySelector('.cross__label').innerHTML;
+                        const cashCoffin = textParent.querySelector('.cross__label').dataset.cash;
+                        const title = mainParent.querySelector('.cross__tim-title');
+                        mainParent.querySelector('.cross__img-tim').setAttribute('src', imgCoffinSrc);
+                        title.innerHTML = textCoffin;
+                        const elementParent = element.closest('.cross');
+                        const coffinItems = elementParent.querySelectorAll('.cross__item, .cross__img, .cross__label');
+                        for(let i of coffinItems){
+                            i.classList.remove('active');
+                        }
+                        //возврат последнего эл в магазине
+                        let lastElementShop = shopForm.lastElementChild;
+        
+                        //удаляем товар если уже есть в списке
+                        //поиск совпадения в выборе и магазине
+                        if(document.querySelector(`[data-shop = "${dataTotal}"]`)){
+                            //возврат эл магазина
+                            const shopElement = document.querySelector(`[data-shop = "${dataTotal}"]`);
+                            //возврат эл перед 
+                            const shopElementPrevious = shopElement.previousSibling;
+                            //удаление элемента
+                            shopElement.remove();
+                            //замена эл после которого будет вставлен новый эл
+                            lastElementShop = shopElementPrevious;
+        
+                        }
+        
+                        //добавление эл в магазин(не меняем переменные внутри)
+                        lastElementShop.insertAdjacentHTML(
+                            'afterend',
+                            `<div class="shop-calc__list" data-shop="${dataTotal}" data-shop-cash = "${cashCoffin}">
+                            <div class="shop-calc__img-box">
+                                <img src="${imgCoffinSrc}" alt="#">
+                            </div>
+                            <div class="shop-calc__info">
+                                <div class="shop-calc__text">${textCoffin}</div>
+                                <div class="shop-calc__cash">стоимость: ${cashCoffin} руб.</div>
+                            </div>
+                            <div class="shop-calc__delete">
+                                <img src="/img/__calc/delete_icon.png" alt="#">
+                            </div>
+                        </div>`
+                        );
+                    }
+        
+                    //= click delete select 
+                    if(element.closest('.shop-calc__delete')){
+                        //возврат эл в магазине
+                        const searchElementShop = element.closest('.shop-calc__list');
+        
+                        //возврат значения атрибута который удаляем
+                        let idSearch = searchElementShop.dataset.shop;
+        
+                        //удаление эл
+                        searchElementShop.remove();
+        
+                        //возврат элемента по значению атрибута
+                        const searchTotalElement = document.querySelector(`[data-total = "${idSearch}"]`);
+                        //возврат элементов по атрибуту
+                        const searchImgDefault = searchTotalElement.querySelector('[data-img]');
+                        const searchTitleDefault = searchTotalElement.querySelector('[data-title]');
+        
+                        //возврат значений атрибутов
+                        let titleData = searchTitleDefault.dataset.title;
+                        let imgData = searchImgDefault.dataset.img;
+        
+                        //присвоение значений атрибутам по умолчанию
+                        searchImgDefault.setAttribute('src', `${imgData}`);
+                        searchTitleDefault.textContent = `${titleData}`;
+        
+                    }
+        
+                    //= кнопка еще 
+                    if(element.closest('.more')){
+                        //возврат элемента перед кнопкой
+                        const previous = element.previousElementSibling;
+                        //возврат класса элемента
+                        const classMy = previous.classList.value;
+                        idTotal++;
+                        //если венки добавляем эл венки
+                        if(classMy === 'wreath'){
+                            const parent = document.querySelectorAll('.wreath');
+                            parent[parent.length - 1].insertAdjacentHTML('afterend',`<div class="title-calc">Ваш выбор ритуального венка:</div>
+                            <div class="wreath" data-total="${idTotal}">
+                                <div class="wreath__tim">
+                                    <img class="wreath__img-tim" src="/img/__calc/wreath/icon.png" alt="#" data-img="/img/__calc/wreath/icon.png">
+                                    <span class="wreath__tim-title" data-all="0" data-title="Выбор венка">Выбор венка</span>
+                                </div>
+                                <div class="wreath__item">
+                                    <img class="wreath__img" src="/img/__calc/wreath/1.png" alt="#">
+                                    <div class="wreath__label" data-cash="121">Венок ритуальный<br>(1.7 метра)</div>
+                                </div>
+                                <div class="wreath__item">
+                                    <img class="wreath__img" src="/img/__calc/wreath/2.png" alt="#">
+                                    <div class="wreath__label" data-cash="89">Венок ритуальный<br>(1.5 метра)</div>
+                                </div>
+                                <div class="wreath__item">
+                                    <img class="wreath__img" src="/img/__calc/wreath/3.png" alt="#">
+                                    <div class="wreath__label" data-cash="42">Венок ритуальный<br>(1.3 метра)</div>
+                                </div>
+                            </div>`);
+                        }
+        
+                        //если одужда добавляем эл одежда
+                        if(classMy === 'dress'){
+                            const parent = document.querySelectorAll('.dress');
+                            parent[parent.length - 1].insertAdjacentHTML('afterend',`<div class="title-calc">Комплект одежды для усопшего:</div>
+                            <div class="dress" data-total="${idTotal}">
+                                <div class="dress__tim">
+                                    <img class="dress__img-tim" src="/img/__calc/dress/dress-icon.png" alt="#" data-img="/img/__calc/dress/dress-icon.png">
+                                    <span class="dress__tim-title" data-all="0" data-title="Выбор одежды">Выбор одежды</span>
+                                </div>
+                                <div class="dress__item">
+                                    <img class="dress__img" src="/img/__calc/dress/1.jpg" alt="#">
+                                    <div class="dress__label" data-cash="55">Костюм женский</div>
+                                </div>
+                                <div class="dress__item">
+                                    <img class="dress__img" src="/img/__calc/dress/2.jpg" alt="#">
+                                    <div class="dress__label" data-cash="35">Обувь женская</div>
+                                </div>
+                                <div class="dress__item">
+                                    <img class="dress__img" src="/img/__calc/dress/3.jpg" alt="#">
+                                    <div class="dress__label" data-cash="46">Костюм мужской</div>
+                                </div>
+                                <div class="dress__item">
+                                    <img class="dress__img" src="/img/__calc/dress/4.jpg" alt="#">
+                                    <div class="dress__label" data-cash="37">Туфли мужские</div>
+                                </div>
+                            </div>`);
+                        }
+                    }
+        
+                    //= check box  
+                    if(!element.closest('.stop') && element.closest('.start')){
+                        // воз эл родителя цели
+                        let divParent = element.parentElement;
+                        //воз зн data-check-id
+                        let nameDataCheckId = divParent.dataset.checkId;
+                        //воз эл input
+                        let divInput = divParent.querySelector('input');
+                        //воз эл label
+                        let divLable = divParent.querySelector('label');
+                        //возврат последнего эл в магазине
+                        let lastElementShop = shopForm.lastElementChild;
+                        if(divInput){
+                            if(divInput.checked){
+                                //воз эл лейбл
+                                let lableText = divLable.textContent;
+                                //воз за цена
+                                let cashCheck = divParent.dataset.praice;
+                                //вставка эл 
+                                lastElementShop.insertAdjacentHTML('afterend',`<div class="check" data-shop-cash="${cashCheck}" data-check-id="${nameDataCheckId}">
+                                <div class="check__img">
+                                    <img src="/img/__calc/check-icon-shop.png" alt="">
+                                </div>
+                                <div class="check__info">
+                                    <div class="check__title">${lableText}</div>
+                                    <div class="check__praice">стоимость: ${cashCheck} руб.</div>
+                                </div>
+                                <div class="check__del">
+                                    <img src="/img/__calc/delete_icon.png" alt="">
+                                </div>
+                            </div>`);
+                            }else{
+                                //воз зн имени input
+                                let nameInput = divInput.getAttribute('name');
+                                if(shopForm.querySelector(`[data-check-id="${nameInput}"]`)){
+                                    shopForm.querySelector(`[data-check-id="${nameInput}"]`).remove();
+                                }
+                            }
+                        }
+                    }
+                    //удаление чекбокс при нажатии на корзину
+                    if(element.closest('.check')){
+                        //воз зн поля data-check-id
+                        let valueCheckId = element.closest('.check').dataset.checkId;
+                        //находим в shopForm эл по атрибуту и удаляем его
+                        shopForm.querySelector(`[data-check-id="${valueCheckId}"]`).remove();
+                        //нах эл по классу, в нем нах эл input
+                        let checkFormInput = document.querySelector(`.${valueCheckId}`).querySelector('input');
+                        //чекбокс по дефолту
+                        checkFormInput.checked = false;
+                    };
+
+                    //= подсчет итога 
+                    let cash = 0;
+                    const allCoffinCashElements = document.querySelectorAll('[data-shop-cash]');
+                    for(let i of allCoffinCashElements){
+                        const iCash = i.dataset.shopCash;
+                        cash = cash + iCash*1;
+                    } 
+                    document.querySelector('.praice').innerHTML = `Всего: ${cash} руб.`;
+        
+                });//end click-listener
+
+                //= прилипание praice 
+                const footerObserver = new IntersectionObserver((entryAll) => {
+                    entryAll.forEach((item) => {
+                        if(item.isIntersecting){
+                            praiceEl.classList.add('stiki');
+                        }else{
+                            praiceEl.classList.remove('stiki');
+                        }
+                    });
+                },{});
+                const footerEl = document.querySelector('.footer');
+                footerObserver.observe(footerEl);
+                const praiceEl = document.querySelector('.praice');
+            }
+        } catch (error) {
+            console.log(error);
+        }
+}
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./public/js/modules/changePosobie.js":
+/*!********************************************!*\
+  !*** ./public/js/modules/changePosobie.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function changePos() {
+    try {
+        const elTextPraceAll = document.querySelectorAll('[data-textPrace]');
+        const elPrace = document.querySelector('[data-prace]');
+
+        const data = new Date();
+        const time = data.getTime();
+
+        if(elTextPraceAll){
+            fetch(`../../ajax/posobie.json?v=${time}`)
+            .then(data => data.json())
+            .then(data => {
+                elTextPraceAll.forEach(item => {
+                item.innerHTML = data.textPrace;
+            });
+        });
+        }
+
+        if(elPrace) {
+            fetch(`../../ajax/posobie.json?v=${time}`)
+            .then(data => data.json())
+            .then(data => {elPrace.innerHTML = data.prace} );
+        }
+
+        
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (changePos);
+
+
+
+
+
+/***/ }),
+
+/***/ "./public/js/modules/check_number_phone.js":
+/*!*************************************************!*\
+  !*** ./public/js/modules/check_number_phone.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ checkNumberPhone)
+/* harmony export */ });
+function checkNumberPhone (inputTel, boxInput, styleBox, {classOne, classTwo}) {
+    try {
+        function symbolPlus (number, symbol) {
+            if(inputTel.value.length === number) {
+                inputTel.value = inputTel.value.slice(0,number - 1) + symbol + inputTel.value[number - 1];
+            }
+        }
+    
+        inputTel.value = '+375';
+        inputTel.addEventListener('input', () => {
+            if(inputTel.value[inputTel.value.length - 1] === '(' || inputTel.value[inputTel.value.length - 1] === ')' || inputTel.value[inputTel.value.length - 1] === '-') {
+                inputTel.value = inputTel.value.slice(0, inputTel.value.length - 1);
+            }else {
+                if(inputTel.value.length < 4) {
+                    inputTel.value = '+375';
+                }
+                symbolPlus(5, '(');
+                symbolPlus(8, ')');
+                symbolPlus(12, '-');
+                symbolPlus(15, '-');
+                if(inputTel.value.length > 16) {
+                    inputTel.value = inputTel.value.slice(0,17);
+                }
+                if(/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(inputTel.value)){
+                    if(styleBox === 0) boxInput.style.boxShadow = '0px 0px 2px 2px rgba(22, 255, 138, 0.663) inset';
+                    if(styleBox === 1) inputTel.style.border = '#28b352 2px solid';
+                    
+                }else {
+                    if(styleBox === 0) boxInput.style.boxShadow = '0px 0px 3px 3px rgba(255, 22, 22, 0.9) inset';
+                    if(styleBox === 1) inputTel.style.border = '#ec3c3c 2px solid';
+                    
+                }
+            }
+            // проверка телефона в конце
+            if(inputTel.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(inputTel.value)) {
+                if(boxInput.classList.contains(classOne)) {
+                    boxInput.classList.remove(classOne);
+                    boxInput.classList.add(classTwo);
+                }
+            }else {
+                if(boxInput.classList.contains(classTwo)) {
+                    boxInput.classList.remove(classTwo);
+                    boxInput.classList.add(classOne);
+                }
+            }
+        });
+        } catch (error) {
+            console.log('',error);
+        }
+}
+
+/***/ }),
+
+/***/ "./public/js/modules/current-user.js":
+/*!*******************************************!*\
+  !*** ./public/js/modules/current-user.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+
+async function currentUser() {
+    console.log('Run def');
+    const div = document.querySelector('.coffin-img');
+    localStorage.clear();
+    if(div) {
+        //* Local User
+        let id = null;
+        const getId = localStorage.getItem('idLog');
+        if(getId) {
+            console.log('id есть уже !');
+            id = getId;
+        }else{
+            console.log('устанавливаем id !');
+            const currentId = new Date().getTime() - 1673480605000 -124000;
+            localStorage.setItem('idLog', currentId);
+            id = currentId;
+        }
+        
+        //* definition 
+        let user = await fetch('https://api.ipify.org?format=json')
+            .then(res =>  res.json())
+            .then(data => {
+                const ip = data.ip;
+                //* POST 
+                fetch('/', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ip, id}),
+                })
+                .then(res => console.log('Status Fetch >>>', res.status))
+                .catch(err => console.log('Error fetch >>>', err));
+                //*---
+            });
+        
+    }
+}
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (currentUser);
+
+/***/ }),
+
+/***/ "./public/js/modules/main.js":
+/*!***********************************!*\
+  !*** ./public/js/modules/main.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ mainFn)
+/* harmony export */ });
+function mainFn () {
+    try {
+        (function () {
+    
+            document.addEventListener('click', listenerClick);
+            window.addEventListener('scroll', listenerScroll);
+            
+            // при клике на меню(логика) -----------------------------------------------------------------  
+            function listenerClick (odject) {
+                const clickOdject = odject.target;
+                
+                if(clickOdject.closest('.header__button')){
+                    document.querySelector('body').classList.toggle('active');
+            
+                    const clickOdjectParent = clickOdject.closest('.header__button');
+                    clickOdjectParent.classList.toggle('active');
+            
+                    clickOdjectParent.closest('.header__burger').classList.toggle('active');
+            
+                    const lineAll = document.querySelectorAll('.header__line');
+                    lineAll.forEach(function (line){
+                        line.classList.toggle('active');
+                    });
+            
+                    const linkAll = document.querySelectorAll('.header__link');
+                    linkAll.forEach(function (link){
+                        link.classList.toggle('active');
+                    });
+            
+                    if(!clickOdject.classList.contains('active')){
+                        const activeSub = document.querySelectorAll('.active-sub');
+                        activeSub.forEach(function(activeSubItem){
+                            activeSubItem.classList.remove('active-sub');
+                        });
+                    }
+                }
+            
+                if(clickOdject.closest('.header__line') && window.innerWidth <= 1020){
+            
+                    const headerLine = clickOdject.closest('.header__line');
+                    const headerLink = headerLine.querySelector('.header__link');
+            
+                    if(headerLink.classList.contains('_sub')){
+                        headerLine.classList.toggle('active-sub');
+                    }
+                    
+                    const listSubAll = headerLine.querySelectorAll('.header__list-sub');
+                    listSubAll.forEach(function (listSub){
+                        listSub.classList.toggle('active-sub');
+                    });
+            
+                    const lineSubAll = headerLine.querySelectorAll('.header__line-sub');
+                    lineSubAll.forEach(function (lineSub){
+                        lineSub.classList.toggle('active-sub');
+                    });
+            
+                    const linkSubAll = headerLine.querySelectorAll('.header__link-sub');
+                    linkSubAll.forEach(function (linkSub){
+                        linkSub.classList.toggle('active-sub');
+                    });
+            
+                }
+            }
+            
+            // hover ----------------------------------------------------------------------------------------
+            const hoverAll = document.querySelectorAll('._sub');
+            
+            hoverAll.forEach(function (hover){
+            hover.addEventListener('mouseover', hoverOver);
+            hover.addEventListener('mouseout', hoverOut);
+            });
+            
+            function hoverOver (hover){
+                const width = window.innerWidth;
+            
+                if(width > 1020){
+            
+                const over = hover.target;
+            
+                const overParent = over.closest('.header__line');
+            
+                const overListSub = overParent.querySelector('.header__list-sub');
+                overListSub.classList.add('hover-sub');
+            
+                overListSub.addEventListener('mouseover', hoverOverSub);
+                overListSub.addEventListener('mouseout', hoverOutSub);
+            
+            
+                function hoverOverSub (e){
+                    const overLineSub = overParent.querySelectorAll('.header__line-sub');
+                    overListSub.classList.add('hover-sub');
+                    overLineSub.forEach(function(e){
+                        e.classList.add('hover-sub');
+                    });
+                
+                    const overLinkSub = overParent.querySelectorAll('.header__link-sub');
+                    overLinkSub.forEach(function(e){
+                    e.classList.add('hover-sub');
+                    });
+                }
+            
+                function hoverOutSub (e){
+                    const overLineSub = overParent.querySelectorAll('.header__line-sub');
+                    overListSub.classList.remove('hover-sub');
+                    overLineSub.forEach(function(e){
+                        e.classList.remove('hover-sub');
+                    });
+                
+                    const overLinkSub = overParent.querySelectorAll('.header__link-sub');
+                    overLinkSub.forEach(function(e){
+                    e.classList.remove('hover-sub');
+                    });
+                }
+            
+                const overLineSub = overParent.querySelectorAll('.header__line-sub');
+                    overLineSub.forEach(function(e){
+                    e.classList.add('hover-sub');
+                });
+            
+                const overLinkSub = overParent.querySelectorAll('.header__link-sub');
+                overLinkSub.forEach(function(e){
+                e.classList.add('hover-sub');
+                });
+                }
+            }
+            
+            function hoverOut (hover){
+                const out = hover.target;
+                const outParent = out.closest('.header__line');
+            
+                const outListSub = outParent.querySelector('.header__list-sub');
+                outListSub.classList.remove('hover-sub');
+            
+                const outLineSub = outParent.querySelectorAll('.header__line-sub');
+                outLineSub.forEach(function(e){
+                    e.classList.remove('hover-sub');
+                });
+            
+                const outLinkSub = outParent.querySelectorAll('.header__link-sub');
+                outLinkSub.forEach(function(e){
+                    e.classList.remove('hover-sub');
+                });  
+                
+            }
+            
+            // крепеж бургера ---------------------------------------------------------------------
+            const burger = document.querySelector('.header__burger');
+            const burgerPxTop = burger.getBoundingClientRect().top;
+            const headerList = document.querySelector('.header__list');
+            
+            
+            // высота меню для скрола
+            function fnHeaderList (){
+                const burgerPxBottom = document.documentElement.clientHeight - burger.getBoundingClientRect().bottom;
+                headerList.style.cssText = `max-height: ${burgerPxBottom}px;`;
+            }
+            fnHeaderList();
+            //---
+            
+            function listenerScroll () {
+                // высота меню для скрола
+                fnHeaderList();
+                //---
+            
+                if(burgerPxTop <= window.scrollY){
+                    burger.classList.add('fix-burger');
+                    headerList.classList.add('fix-burger');
+            
+                }else{
+                    burger.classList.remove('fix-burger');
+                    headerList.classList.remove('fix-burger');
+                }
+            }
+            
+            // бегуший текст------------------------------------------------
+            
+            const age17 = document.querySelector('.age-17');
+            
+            if(age17){
+            
+                window.addEventListener('scroll', numberScroll);
+                let flag = 0;
+                let age17Show = age17.getBoundingClientRect().bottom - document.documentElement.clientHeight;
+                function numberScroll () {
+                    if(window.scrollY >= age17Show && flag === 0){
+                        startTime();
+                        flag = 1;
+                    }
+                }
+            }
+            
+            function startTime(){
+                const elAge = document.getElementById('age');
+                let timeAge = Number(elAge.dataset.time);
+                let startAge = Number(elAge.dataset.start);
+                let endAge = Number(elAge.dataset.end);
+            
+                const elAge1 = document.getElementById('age1');
+                let timeAge1 = Number(elAge1.dataset.time);
+                let startAge1 = Number(elAge1.dataset.start);
+                let endAge1 = Number(elAge1.dataset.end);
+                
+                const elBurial = document.getElementById('burial');
+                let timeBurial = Number(elBurial.dataset.time);
+                let startBurial = Number(elBurial.dataset.start);
+                let endBurial = Number(elBurial.dataset.end);
+                
+                const elCremation = document.getElementById('cremation');
+                let timeCremation = Number(elCremation.dataset.time);
+                let startCremation = Number(elCremation.dataset.start);
+                let endCremation = Number(elCremation.dataset.end);
+                
+                showText(timeCremation, startCremation, endCremation, elCremation);
+                showText(timeAge, startAge, endAge, elAge);
+                showText(timeAge1, startAge1, endAge1, elAge1);
+                showText(timeBurial, startBurial, endBurial, elBurial);
+            }
+            
+            function showText (time, start, end, el) {
+                const timeInterval = time / end;
+                let step = 1;
+                if(timeInterval < 10){
+                    let proc = Math.trunc(10 / timeInterval);
+                    step = proc;
+                }
+                let timeOut =  setTimeout(showText, timeInterval, time, step + start, end, el);
+                if (start >= end) {
+                    clearTimeout(timeOut);
+                    start = end;
+                }
+                el.innerText = start + '+';
+            }
+            }());
+        } catch (error) {
+            console.log('',error);
+        }
+}
+
+/***/ }),
+
+/***/ "./public/js/modules/popup.js":
+/*!************************************!*\
+  !*** ./public/js/modules/popup.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ popUpFn)
+/* harmony export */ });
+/* harmony import */ var _check_number_phone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./check_number_phone */ "./public/js/modules/check_number_phone.js");
+
+
+function popUpFn () {
+    try {
+        //= popup блок  
+    const orderCall = document.querySelector('.order-call');
+        //* всплытие popup   
+        (function popup () {
+            const orderCall = document.querySelector('.order-call');
+            const openAll = document.querySelectorAll('[data-popup="open"]');
+            const title = orderCall.querySelector('.order-call__title');
+            const body = document.body;
+            //open
+            openAll.forEach(item => {
+                item.addEventListener('click', () => {
+                    orderCall.style.display = 'flex';
+                    body.style.overflow = 'hidden';
+                    if(item.hasAttribute('data-name-button')) {
+                        title.textContent = item.getAttribute('data-name-button');
+                    }
+                });
+            });
+            //close
+            orderCall.addEventListener('click', (e) => {
+                body.style.overflow = 'auto';
+                if(e.target.closest('.order-call__x')) {
+                    orderCall.style.display = 'none';
+                }
+            });
+            
+        }());
+        //* проверка телефона и трубка зеленая/серая   
+        (function phoneInput () {
+            const inputTel = document.querySelector('.order-call__tel');
+            const divInputTel = document.querySelector('.order-call__tel-div');
+            inputTel.addEventListener('click', () => (0,_check_number_phone__WEBPACK_IMPORTED_MODULE_0__["default"])(inputTel, divInputTel, 1, {classOne: '_grey', classTwo: '_green'}));
+        }());
+        //* проверка имени   
+        const orderCallName = document.querySelector('.order-call__name');
+        function nameTest () {
+            let name = orderCallName.value;
+            if(name.length < 3) {
+                orderCallName.value = '';
+                orderCallName.setAttribute('placeholder', 'Минимум 3 символа.');
+            }
+        }
+        //* отправка на почту с анимацией  
+        (function emaiPopUp () {
+            const button = document.querySelector('.order-call__button');
+            const inputTel = document.querySelector('.order-call__tel');
+            const bodyDis = document.body;
+            const animeMeil = document.querySelector('.anime-meil');
+
+            button.addEventListener('click', clickPopUp);
+
+            function clickPopUp (e) {
+                const orderTitle = document.querySelector('.order-call__title');
+                let title = orderTitle.textContent;
+                console.log('',title);
+                e.preventDefault;
+                nameTest();
+                const  form = document.forms.popup;
+                if(inputTel.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(inputTel.value) && orderCallName.value) {
+                    let formData = new FormData(form);
+                    formData.set('title', title);
+                    bodyDis.style.overflow = 'hidden';
+                    animeMeil.style.display = 'block';
+                    fetch('popup.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(data => {
+                        if(data.status === 200) {
+                            bodyDis.style.overflow = 'auto';
+                            animeMeil.style.display = 'none';
+                            button.textContent = 'заявка отправлена';
+                            orderCallName.value = '';
+                            inputTel.value = 'Cпасибо за заказ !';
+                            setTimeout(() => {
+                                orderCall.style.display = 'none';
+                            },1500);
+                        }
+                    });
+                }else {
+                    button.textContent = 'проверьте данные';
+                    setTimeout(()=>{
+                        button.textContent = 'заказать по акции';
+                    },2000);
+                }
+            }
+        }());
+    
+        } catch (error) {
+            console.log('',error);
+        }
+}
+
+
+/***/ }),
+
+/***/ "./public/js/modules/shop-sort.js":
+/*!****************************************!*\
+  !*** ./public/js/modules/shop-sort.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ shopSortFn)
+/* harmony export */ });
+function shopSortFn () {
+    try {
+        const findBlockJson = document.querySelector('[data-json]');
+        (function () {
+            const 
+            shopBlock = document.querySelector('.shop-block'),
+            buttonSort = document.querySelector('.button-sort'),
+            inputPrace = document.querySelector('.button-sort__praice-box'),
+            inputFrom = document.querySelector('[name="from"]'),
+            inputBefore = document.querySelector('[name="before"]'),
+            ajax = shopBlock.getAttribute('data-json');
+        
+            let 
+            inputBeforeValue = 0, 
+            inputFromValue = 0;
+            
+            //= function 
+            //вывод на экран
+            function inputCoffins (arr) {
+                if(ajax === 'ajax/coffins.json') {
+                    arr.forEach(item => {
+                        shopBlock.insertAdjacentHTML('beforeend',`
+                        <div class="shop-block__item flex_coffins">
+                                    <div class="card">
+                                        <div class="card__body">
+                                            <div class="card__title">${item.title}</div>
+                                            <div class="card__img card__img_height">
+                                                <picture>
+                                                    <source srcset='${item.img1}'>
+                                                    <source srcset='${item.img2}'>
+                                                    <source srcset='${item.img3}'>
+                                                    <img src='${item.img4}' alt="гроб">
+                                                </picture>
+                                            </div>
+                                            <div class="card__prais">${item.prais}</div>
+                                            <a class="card__button" href="contacts.html">купить</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        `);
+                    });
+                }
+                if(ajax === 'ajax/wreaths.json') {
+                    arr.forEach(item => {
+                        shopBlock.insertAdjacentHTML('beforeend',`
+                        <div class="shop-block">    
+                            <div class="shop-block__item  flex-wreaths">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <div class="card__title">${item.title}</div>
+                                        <div class="card__img card__img_height-wreaths">
+                                            <picture>
+                                                <source srcset=${item.img1} type="image/webp">
+                                                <img src=${item.img2} alt="Венок ритуальный">
+                                            </picture>
+                                    </div>
+                                    <div class="card__prais">${item.prais}</div>
+                                    <a class="card__button" href="contacts.html">купить</a>
+                                </div>
+                            </div>
+                        </div>
+                        `);
+                    });
+                }
+            }
+        
+            function sortArreyMinMax (arr) {
+                return arr.sort(fnSort);
+            }
+        
+            function sortArreyMaxMin (arr) {
+                return sortArreyMinMax(arr).reverse();
+            }
+        
+            function fnSort (x, y) {
+                let a = +`${x.prais}`.match(/\d+.?\d+?/g).join('');
+                let b = +`${y.prais}`.match(/\d+.?\d+?/g).join('');
+                if(a > b) return 1;
+                if(a < b) return -1;
+                if(a === b) return 0;
+            }
+        
+            //очистка всего магазина
+            function delShopElements () {
+                shopBlock.innerHTML = '';
+            }
+        
+            function removeClassButton (thisTarget) {
+                document.querySelectorAll('._sort-color').forEach(item => {
+                    item.classList.remove('_sort-color');
+                });
+                thisTarget.classList.add('_sort-color');
+            }
+        
+            function sortNum (fn) {
+                if(!inputFrom.value) {
+                    inputFromValue = 0;
+                }else {
+                    inputFromValue = +inputFrom.value;
+                } 
+                if(!inputBefore.value) {
+                    inputBeforeValue = 10000;
+                }else {
+                    inputBeforeValue = +inputBefore.value;
+                }
+                fetch(ajax)
+                .then(data => data.json())
+                .then(objArrey => {
+                    shopBlock.innerHTML = '';
+                    let inputSort = objArrey.filter((item, key, arr) => {
+                        let numSort = +(item.prais).match(/\d+.?\d+?/g).join('');
+                        if (inputBeforeValue > numSort && numSort > inputFromValue) {
+                            return arr;
+                        }
+                    });
+                    if(!inputSort.length) {
+                        shopBlock.insertAdjacentHTML('beforeend', '<div class="shop-block__not">Извините, нет подходящих товаров.</div>');
+                    } 
+                    inputCoffins(fn(inputSort));
+                    });
+            }
+        
+            //= CODE 
+        
+            fetch(ajax)
+            .then(data => data.json())
+            .then(objArrey => {
+                inputCoffins(sortArreyMaxMin(objArrey));
+            });
+        
+            buttonSort.addEventListener('click', (e) => {
+                let target = e.target;
+                if(target.classList.contains('button-sort__cheap')) {
+                    removeClassButton(target);
+                    sortNum(sortArreyMinMax);
+                }
+                if(target.classList.contains('button-sort__lot')) {
+                    removeClassButton(target);
+                    sortNum(sortArreyMaxMin);
+                }
+            });
+        
+            inputPrace.addEventListener('input', () => {
+        
+                let maxOrMin = document.querySelector('._sort-color');
+        
+                if(maxOrMin.classList.contains('button-sort__lot')) {
+                    sortNum(sortArreyMaxMin);
+                }else {
+                    sortNum(sortArreyMinMax);
+                }
+            });
+        }());
+    
+        } catch (error) {
+            console.log('',error);
+        }
+}
+
+
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!*****************************!*\
+  !*** ./public/js/script.js ***!
+  \*****************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/main */ "./public/js/modules/main.js");
+/* harmony import */ var _modules_calc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/calc */ "./public/js/modules/calc.js");
+/* harmony import */ var _modules_shop_sort__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/shop-sort */ "./public/js/modules/shop-sort.js");
+/* harmony import */ var _modules_popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/popup */ "./public/js/modules/popup.js");
+/* harmony import */ var _modules_changePosobie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/changePosobie */ "./public/js/modules/changePosobie.js");
+/* harmony import */ var _modules_current_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/current-user */ "./public/js/modules/current-user.js");
+
+
+
+
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    (0,_modules_main__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    (0,_modules_calc__WEBPACK_IMPORTED_MODULE_1__["default"])();
+    (0,_modules_shop_sort__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    (0,_modules_popup__WEBPACK_IMPORTED_MODULE_3__["default"])();
+    (0,_modules_changePosobie__WEBPACK_IMPORTED_MODULE_4__["default"])();
+    (0,_modules_current_user__WEBPACK_IMPORTED_MODULE_5__["default"])();
+});
+
+})();
+
+/******/ })()
+;
 //# sourceMappingURL=bundle.js.map

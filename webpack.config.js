@@ -2,7 +2,7 @@
 let path = require('path');
 
 module.exports = {
-  mode: 'production', //режим разработки(в финале сборки production/development)
+  mode: 'development', //режим разработки(в финале сборки production/development)
   entry: './public/js/script.js', //файл с зависимостями
   output: {
     filename: 'bundle.js', //имя финального файла
