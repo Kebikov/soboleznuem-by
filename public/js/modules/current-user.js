@@ -1,41 +1,100 @@
+import { v4 as uuidv4 } from 'uuid';
 
+//= currentUser 
 async function currentUser() {
-    console.log('Run def');
+    let id = null;
+    console.log('Run def', uuidv4());
     const div = document.querySelector('.coffin-img');
     localStorage.clear();
+
     if(div) {
-        //* Local User
-        let id = null;
         const getId = localStorage.getItem('idLog');
         if(getId) {
             console.log('id есть уже !');
             id = getId;
         }else{
             console.log('устанавливаем id !');
-            const currentId = new Date().getTime() - 1673480605000 -124000;
+            const currentId = uuidv4();
             localStorage.setItem('idLog', currentId);
             id = currentId;
         }
+        getToken();
         
-        //* definition 
-        let user = await fetch('https://api.ipify.org?format=json')
-            .then(res =>  res.json())
+    }; // if end
+
+    //* getToken 
+    async function getToken() {
+        fetch('/token')
+            .then(res => res.json())
             .then(data => {
-                const ip = data.ip;
-                //* POST 
-                fetch('/', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ip, id}),
-                })
-                .then(res => console.log('Status Fetch >>>', res.status))
-                .catch(err => console.log('Error fetch >>>', err));
-                //*---
-            });
-        
+                ipinfo(data.res);
+            })
+            .catch(err => console.log('Error fetch /token >>>', err));
     }
-}
+    //* ipinfo 
+    async function ipinfo(token) {
+        fetch(`https://ipinfo.io/json?token=${token}`)
+            .then(res => res.json())
+            .then(json => {
+                console.log('SEND >>> ', json.ip, json.city, json.org, id);
+                const ip = json.ip;
+                const city = json.city;
+                const lan = json.org;
+                sendPost(ip, id, city, lan);
+            })
+            .catch(err => console.log('Error fetch https://ipinfo.io >>>', err));
+    }
+    //* sendPost 
+    async function sendPost(ip, id, city, lan) {
+        fetch('/', { 
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ip, id, city, lan}),
+        })
+        .then(res => console.log('Status Fetch >>>', res.status))
+        .catch(err => console.log('Error fetch / >>>', err));
+    }
+
+//= end 
+}; 
 
 
 
 export default currentUser;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//* definition 
+        // let user = await fetch('https://api.ipify.org?format=json')
+        //     .then(res =>  res.json())
+        //     .then(data => {
+        //         const ip = data.ip;
+        //         //* POST 
+        //         fetch('/', {
+        //             method: 'POST',
+        //             headers: {'Content-Type': 'application/json'},
+        //             body: JSON.stringify({ip, id}),
+        //         })
+        //         .then(res => console.log('Status Fetch >>>', res.status))
+        //         .catch(err => console.log('Error fetch >>>', err));
+        //         //*---
+        //     });

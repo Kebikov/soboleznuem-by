@@ -1,137 +1,25 @@
 <!doctype html>
 <html lang="ru">
-<%- include('./modules/head.ejs') %>
+
+<!--* head -->
+    <%- include('./modules/head.ejs') %>
+
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQPKWTP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+
+    <!--* google-tag-noscript -->
+        <%- include('./modules/google-tag-noscript.ejs') %>
+
     <div class="wrapper">
-        <!--= heder -->
-        <header class="header">
-            <div class="header__up">
-                <div class="header__logo">
-                    <img class="header__logo-img" src="img/home/logo-new.png" alt="логотип сайта похороны в минске" width="100" height="100">
-                </div>
-                <h1 class="header__title"><span>Ритуальные услуги в Минске</span></h1>
-                <a href="tel:+375447695139" class="header__tel">тел.+375 44 769 51 39</a>
-            </div>
-            <div class="header__down">
-                <div class="header__burger">
-                    <div class="header__button">
-                        <span></span>
-                    </div>
-                </div>
-                <nav class="header__nav">
-                    <ul class="header__list">
-                        <li class="header__line">
-                            <a href="index.html" class="header__link">главная</a>
-                        </li>                      
-                        <li class="header__line">
-                            <a href="#" class="header__link  _sub">услуги</a>
-                            <ul class="header__list-sub">
-                                <li class="header__line-sub">
-                                    <a href="burial.html" class="header__link-sub">Захоронение</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="cremation.html" class="header__link-sub">Кремация</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="ritual-agent.html" class="header__link-sub">Ритуальный агент</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="copter-graves.html" class="header__link-sub">Копка могилы</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="rent-catatal.html" class="header__link-sub">Аренда катафалка</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="loaders.html" class="header__link-sub">Носильщик гроба</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="cargo-200.html" class="header__link-sub">Груз 200</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="production-of-monuments.html" class="header__link-sub">Помощь в изготовлении памятников</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="header__line">
-                            <a href="#" class="header__link  _sub">товары</a>
-                            <ul class="header__list-sub">
-                                <li class="header__line-sub">
-                                    <a href="shop-coffins.html" class="header__link-sub">Гробы</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-wreaths.html" class="header__link-sub">Венки ритуальные</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-baskets.html" class="header__link-sub">Корзины ритуальные</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-crosses.html" class="header__link-sub">Кресты</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-clothes.html" class="header__link-sub">Одежда</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-payment.html" class="header__link-sub">Доставка и оплата</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="header__line">
-                            <a href="information.html" class="header__link">важная информация</a>
-                        </li>
-                        <li class="header__line">
-                            <a href="morgues-in-minsk.html" class="header__link">морги в минске</a>
-                        </li>
-                        <li class="header__line">
-                            <a href="reviews.html" class="header__link">отзывы</a>
-                        </li>
-                        <li class="header__line">
-                            <a href="contacts.html" class="header__link">контакты</a>
-                        </li>
-                    </ul> 
-                </nav>
-            </div>
-        </header>
+
+        <!--* heder -->
+            <%- include('./modules/header.ejs') %>
 
         <!--= main -->
         <main class="main">
-            <!--* pop-up заказ звонка  -->
-            <div class="order-call">
-                <div class="order-call__body">
-                    <div class="order-call__x">
-                        <img src="img/popup/x.png" alt="натяжные потолки в гомеле">
-                    </div>
-                    <div class="order-call__logo">
-                        <img src="img/home/logo-new.png" alt="логотип">
-                    </div>
-                    <div class="order-call__title">Заказать расчёт</div>
-                    <div class="order-call__text">Оставьте заявку и мы свяжемся с Вами<br>в ближайшее время.</div>
-                    <form class="order-call__form" action="order_call.php" method="POST" name="popup">
-                        <input type="text" class="order-call__name" placeholder="Ваше имя" name="name" autocomplete="off">
-                        <div class="order-call__tel-div _grey">
-                            <input type="tel" class="order-call__tel" placeholder="Ваш телефон" name="tel" autocomplete="off">
-                        </div>
-                        <div class="order-call__button">заказать</div>
-                    </form>
-                    <div class="order-call__email">
-                        <img src="img/popup/email.png" alt="письмо">
-                    </div>
-                </div>
-            </div>
-            <!--* анимация отправки письма -->
-            <div class="anime-meil">
-                <div class="anime-meil__body">
-                    <div class="anime-meil__box">
-                        <div class="anime-meil__meil">
-                            <img src="img/popup/email.png" alt="письмо">
-                        </div>
-                        <div class="anime-meil__text">отправка письма...</div>
-                    </div>
-                </div>
-            </div>
+
+            <!--* pop-up-email -->
+                <%- include('./modules/pop-up-email.ejs') %>
+
             <!-- img гроб -->
             <div class="coffin-img container_img">
                 <picture>
@@ -398,10 +286,8 @@
             </div>
         </main>
 
-        <!--= footer -->
-        <%- include('./modules/footer.ejs') %>
-    <!-- end  -->
-    </div>
-<script src="dist/bundle.js?v=2.6"></script>
+        <!--* footer -->
+            <%- include('./modules/footer.ejs') %>
+
 </body>
 </html>
