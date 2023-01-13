@@ -46,10 +46,11 @@ app.get('/token', (req, res) => {
 });
 
 app.use((req, res) => {
-const title = 'Error Page';
-res
-    .status(404)
-    .render(createPath('error'), { title });
+    const title = 'Error Page';
+    const description = 'Error page';
+    res
+        .status(404)
+        .render(createPath('error'), {title,description});
 });
 
 

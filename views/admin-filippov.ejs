@@ -1,162 +1,53 @@
 <!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="➤ Услуги ритуальных грузчиков в Минске и Минской области. ✅ Ответственные носильщики гроба по доступной цене.">
-    <link rel="icon" type="image/png" href="img/home/favicon.png">
-    <link rel="stylesheet" href="css/style.css?v=2.6">
-    <title>ADMIN</title>
-</head>
-<body>
-    <div class="wrapper">
-        <!--= heder -->
-        <header class="header">
-            <div class="header__up">
-                <div class="header__logo">
-                    <img class="header__logo-img" src="img/home/logo-new.png" alt="логотип сайта похороны в минске">
-                </div>
-                <h1 class="header__title"><span>Ритуальные услуги в Минске</span></h1>
-                <a href="tel:+375447695139" class="header__tel">тел.+375 44 769 51 39</a>
-            </div>
-            <div class="header__down">
-                <div class="header__burger">
-                    <div class="header__button">
-                        <span></span>
-                    </div>
-                </div>
-                <nav class="header__nav">
-                    <ul class="header__list">
-                        <li class="header__line">
-                            <a href="index.html" class="header__link">главная</a>
-                        </li>                      
-                        <li class="header__line">
-                            <a href="#" class="header__link  _sub">услуги</a>
-                            <ul class="header__list-sub">
-                                <li class="header__line-sub">
-                                    <a href="burial.html" class="header__link-sub">Захоронение</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="cremation.html" class="header__link-sub">Кремация</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="ritual-agent.html" class="header__link-sub">Ритуальный агент</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="copter-graves.html" class="header__link-sub">Копка могилы</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="rent-catatal.html" class="header__link-sub">Аренда катафалка</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="loaders.html" class="header__link-sub">Носильщик гроба</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="cargo-200.html" class="header__link-sub">Груз 200</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="production-of-monuments.html" class="header__link-sub">Помощь в изготовлении памятников</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="header__line">
-                            <a href="#" class="header__link  _sub">товары</a>
-                            <ul class="header__list-sub">
-                                <li class="header__line-sub">
-                                    <a href="shop-coffins.html" class="header__link-sub">Гробы</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-wreaths.html" class="header__link-sub">Венки ритуальные</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-baskets.html" class="header__link-sub">Корзины ритуальные</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-crosses.html" class="header__link-sub">Кресты</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-clothes.html" class="header__link-sub">Одежда</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-payment.html" class="header__link-sub">Доставка и оплата</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="header__line">
-                            <a href="information.html" class="header__link">важная информация</a>
-                        </li>
-                        <li class="header__line">
-                            <a href="morgues-in-minsk.html" class="header__link">морги в минске</a>
-                        </li>
-                        <li class="header__line">
-                            <a href="reviews.html" class="header__link">отзывы</a>
-                        </li>
-                        <li class="header__line">
-                            <a href="contacts.html" class="header__link">контакты</a>
-                        </li>
-                    </ul> 
-                </nav>
-            </div>
-        </header>
 
+<!--* head -->
+<%- include('./modules/head.ejs') %>
+
+<body>
+
+    <!--* google-tag-noscript -->
+    <%- include('./modules/google-tag-noscript.ejs') %>
+
+    <div class="wrapper">
+
+        <!--* heder -->
+        <%- include('./modules/header.ejs') %>
+
+        <!-- main code -->
         <!--= main -->
         <main class="main">
-        <!-- шапка -->
-        <div class="heder-page heder-page_margin">
-            <h1 class="heder-page__title">ADMIN</h1>
-            <div class="heder-page__img">
-                <picture>
-                    <source srcset="img/home/grob-500.webp" type="image/webp" media="(max-width: 750px)">
-                    <source srcset="img/home/grob-500.jpg" type="image/jpeg" media="(max-width: 750px)">
-                    <source srcset="img/home/grob.webp" type="image/webp">
-                    <img src="img/home/grob.jpg" alt="фото гроба">
-                </picture>
+            <!-- шапка -->
+            <div class="heder-page heder-page_margin">
+                <h1 class="heder-page__title">ADMIN</h1>
+                <div class="heder-page__img">
+                    <picture>
+                        <source srcset="img/home/grob-500.webp" type="image/webp" media="(max-width: 750px)">
+                        <source srcset="img/home/grob-500.jpg" type="image/jpeg" media="(max-width: 750px)">
+                        <source srcset="img/home/grob.webp" type="image/webp">
+                        <img src="img/home/grob.jpg" alt="фото гроба">
+                    </picture>
+                </div>
             </div>
-        </div>
+    
+            <!--= Form-Admin -->
+            <div class="form-body">
+                <form class="form-admin" name="admin">
+                    <label class="form-admin__label" for="textPrace">Текст пособия</label>
+                    <textarea name="textPrace" class="form-admin__input" type="text" id="textPrace" rows="3"></textarea>
+                    <label class="form-admin__label" for="prace">Cумма пособия</label>
+                    <input name="prace" class="form-admin__input" type="text" id="prace">
+                    <label class="form-admin__label" for="year">Текуший год</label>
+                    <input name="year" class="form-admin__input" type="text" id="year">
+    
+                    <button class="form-admin__button" type="submit" >отправить</button>
+                </form>
+            </div>
+    
+            </main>
 
-        <!--= Form-Admin -->
-        <div class="form-body">
-            <form class="form-admin" name="admin">
-                <label class="form-admin__label" for="textPrace">Текст пособия</label>
-                <textarea name="textPrace" class="form-admin__input" type="text" id="textPrace" rows="3"></textarea>
-                <label class="form-admin__label" for="prace">Cумма пособия</label>
-                <input name="prace" class="form-admin__input" type="text" id="prace">
-                <label class="form-admin__label" for="year">Текуший год</label>
-                <input name="year" class="form-admin__input" type="text" id="year">
+        <!--* footer -->
+        <%- include('./modules/footer.ejs') %>
 
-                <button class="form-admin__button" type="submit" >отправить</button>
-            </form>
-        </div>
-
-        </main>
-        <!--= footer -->
-        <footer class="footer">
-            <div class="footer__item-img">
-                <picture>
-                    <source srcset="img/footer/Logo-1.webp" type="image/webp">
-                    <img loading="lazy" class="footer__img" src="img/footer/Logo-1.jpg"  alt="логотип похороны в минске" width="298" height="100">
-                </picture>
-            </div>
-            <div class="footer__item">
-                <div class="footer__title">адрес</div>
-                <div class="footer__text">г.Минск</div>
-                <div class="footer__text">пр-т Партизанский 5</div>
-            </div>
-            <div class="footer__item">
-                <div class="footer__title">телефоны</div>
-                <a class="footer__text" href="tel:+375447695139">+375447695139</a>
-                <a class="footer__text" href="tel:+375295057052">+375295057052</a>
-            </div>
-            <div class="footer__item">
-                <div class="footer__title">часы работы</div>
-                <div class="footer__text">24 часа</div>
-                <div class="footer__text">круглосуточно</div>
-            </div>
-        </footer>
-        <!-- end wrapper -->
-    </div>
-
-<script src="dist/bundle.js?v=2.6"></script>
-<script src="app.js"></script>
 </body>
 </html>

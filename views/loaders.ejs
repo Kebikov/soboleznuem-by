@@ -1,242 +1,107 @@
 <!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="➤ Услуги ритуальных грузчиков в Минске и Минской области. ✅ Ответственные носильщики гроба по доступной цене.">
-    <link rel="icon" type="image/png" href="img/home/favicon.png">
-    <link rel="stylesheet" href="css/style.css?v=2.6">
-    <title>Носильщики гроба в Минске и Минской области - ритуальные грузчики</title>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(88857516, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/88857516" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TQPKWTP');</script>
-<!-- End Google Tag Manager -->
-</head>
-<body><!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQPKWTP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<!--* head -->
+<%- include('./modules/head.ejs') %>
+
+<body>
+
+    <!--* google-tag-noscript -->
+    <%- include('./modules/google-tag-noscript.ejs') %>
+
     <div class="wrapper">
 
-        <!--= heder -->
-        <header class="header">
-            <div class="header__up">
-                <div class="header__logo">
-                    <img class="header__logo-img" src="img/home/logo-new.png" alt="логотип сайта похороны в минске">
-                </div>
-                <h1 class="header__title"><span>Ритуальные услуги в Минске</span></h1>
-                <a href="tel:+375447695139" class="header__tel">тел.+375 44 769 51 39</a>
-            </div>
-            <div class="header__down">
-                <div class="header__burger">
-                    <div class="header__button">
-                        <span></span>
-                    </div>
-                </div>
-                <nav class="header__nav">
-                    <ul class="header__list">
-                        <li class="header__line">
-                            <a href="index.html" class="header__link">главная</a>
-                        </li>                      
-                        <li class="header__line">
-                            <a href="#" class="header__link  _sub">услуги</a>
-                            <ul class="header__list-sub">
-                                <li class="header__line-sub">
-                                    <a href="burial.html" class="header__link-sub">Захоронение</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="cremation.html" class="header__link-sub">Кремация</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="ritual-agent.html" class="header__link-sub">Ритуальный агент</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="copter-graves.html" class="header__link-sub">Копка могилы</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="rent-catatal.html" class="header__link-sub">Аренда катафалка</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="loaders.html" class="header__link-sub">Носильщик гроба</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="cargo-200.html" class="header__link-sub">Груз 200</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="production-of-monuments.html" class="header__link-sub">Помощь в изготовлении памятников</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="header__line">
-                            <a href="#" class="header__link  _sub">товары</a>
-                            <ul class="header__list-sub">
-                                <li class="header__line-sub">
-                                    <a href="shop-coffins.html" class="header__link-sub">Гробы</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-wreaths.html" class="header__link-sub">Венки ритуальные</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-baskets.html" class="header__link-sub">Корзины ритуальные</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-crosses.html" class="header__link-sub">Кресты</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-clothes.html" class="header__link-sub">Одежда</a>
-                                </li>
-                                <li class="header__line-sub">
-                                    <a href="shop-payment.html" class="header__link-sub">Доставка и оплата</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="header__line">
-                            <a href="information.html" class="header__link">важная информация</a>
-                        </li>
-                        <li class="header__line">
-                            <a href="morgues-in-minsk.html" class="header__link">морги в минске</a>
-                        </li>
-                        <li class="header__line">
-                            <a href="reviews.html" class="header__link">отзывы</a>
-                        </li>
-                        <li class="header__line">
-                            <a href="contacts.html" class="header__link">контакты</a>
-                        </li>
-                    </ul> 
-                </nav>
-            </div>
-        </header>
+        <!--* heder -->
+        <%- include('./modules/header.ejs') %>
 
+        <!-- main code -->
         <!--= main -->
         <main class="main">
 
-
-<!-- шапка -->
-        <div class="heder-page heder-page_margin">
-            <h1 class="heder-page__title">НОСИЛЬЩИКИ ГРОБА</h1>
-            <div class="heder-page__img">
-                <picture>
-                    <source srcset="img/home/grob-500.webp" type="image/webp" media="(max-width: 750px)">
-                    <source srcset="img/home/grob-500.jpg" type="image/jpeg" media="(max-width: 750px)">
-                    <source srcset="img/home/grob.webp" type="image/webp">
-                    <img src="img/home/grob.jpg" alt="фото гроба">
-                </picture>
-            </div>
-        </div>
-<!-- текст: В народе существует мнение-->
-        <div class="text-page container">
-            <div class="text-page_margin">В народе существует мнение, что должна быть не только праведная жизнь, но и «правильная» смерть. Еще на Руси люди заранее приобретали ритуальные принадлежности. Обязательно следили за тем, чтобы усопший был крещеным, не пил, соблюдал все ритуалы при жизни.  Только при таких обстоятельствах во время  похорон его несли на специальных полотенцах к месту захоронения.  Правильно выполнить церемонию захоронения помогали носильщики гроба.</div>
-        </div>
-<!-- IMG: выносят гроб -->
-        <div class="text-img container">
-            <picture>
-                <source srcset="img/__loaders/1-500.webp" type="image/webp" media="(max-width: 750px)">
-                <source srcset="img/__loaders/1-500.jpg" type="image/jpeg" media="(max-width: 750px)">
-                <source srcset="img/__loaders/1.webp" type="image/webp">
-                <img src="img/__loaders/1.jpg" alt="выносят гроб">
-            </picture>
-        </div>
-<!-- title: Почему родственникам нельзя нести гроб?-->
-        <div class="text-title container">
-            <div class="text-title_margin">Почему родственникам нельзя нести гроб?</div>
-        </div>
-<!-- текст: -->
-        <div class="text-page container">
-            <div class="text-page_margin">Существовало такое мнение, что если родственник несет гроб, то он не скорбит, а радуется утрате. Кроме того, считалось, что если кровный родственник будет нести гроб, то это приведет к его быстрой кончине. Конечно, век суеверий уже позади, но все же традиции сохранились. Чаще всего для того, чтобы нести гроб приглашают соседей, коллег умершего. Но это тоже неудобно, ведь для некоторых это испытание, психологическая травма. Сегодня существуют специально обученные люди, которые помогают вынести гроб и делают это красиво. Носильщики гроба повязывают на руку полотенце, на рукав — траурную ленту. Они обязательно выглядят презентабельно и облачены в красивую траурную одежду. Таким образом они выражают уважение к усопшему и его родственникам, что в такой ситуации очень важно. И если раньше считалось, что гроб обязательно нужно было 3 раза ударить об порог, чтобы душа покойного не возвращалась домой, то сейчас важно аккуратно вынести покойного. Необходимо делать это спокойно, не задев косяки. Опять же, это уважение к родственникам и усопшему. Профессиональные ритуальные грузчики понимают, как важно сработать слаженно, четко и при этом красиво. Донести гроб до катафалка, места захоронения не так просто как кажется. Несущие должны идти в одном темпе, правильно поддерживать гроб, чтобы не только удержать его, но и придать церемонии величественности. Бригада носильщиков состоит чаще всего из 4-6 человек. Если это профессионалы, то они всегда одеты в соответствии с траурным этикетом, поведение их на похоронах сдержанное и деликатное. От их действий зависит сохранность тела в транспорте при перевозке, да и то, как будет выглядеть процедура переноса усопшего. Ритуальные носильщики задают ритм церемонии, выполняют свою работу профессионально и слаженно. Стоимость же их услуг не так и высока.</div>
-        </div>
-<!-- title: Услуга переноса гроба в Минске-->
-        <div class="text-title container">
-            <div class="text-title_margin">Услуга переноса гроба в Минске</div>
-        </div>
-<!-- текст: У нас работают опытные ритуальные-->
-        <div class="text-page container">
-            <div class="text-page_margin">У нас работают опытные ритуальные грузчики, которые делают все для того, чтобы церемония похорон и переноса усопшего прошла торжественно и очень душевно. Во главе процессии обязательно несут портрет покойного, далее идут носильщики с покойным. Выносят усопшего вперед ногами. После усопшего идут родственники, друзья и близкие. В самом конце процессии – остальные участники. Работа ритуальных носильщиков во время похорон заключается в переносе гроба, доставке его к месту отпевания. Также наши сотрудники помогают доставить тело к месту погребения и опускают гроб в могилу. При необходимости открыть крышку делается это аккуратно, быстро, без повреждений гроба, покойного.</div>
-        </div>
-<!-- IMG: несут гроб-->
-        <div class="text-img container">
-            <picture>
-                <source srcset="img/__loaders/2-500.webp" type="image/webp" media="(max-width: 750px)">
-                <source srcset="img/__loaders/2-500.jpg" type="image/jpeg" media="(max-width: 750px)">
-                <source srcset="img/__loaders/2.webp" type="image/webp">
-                <img src="img/__loaders/2.jpg" alt="несут гроб">
-            </picture>
-        </div>
-<!-- title: Сколько стоят услуги ритуальных носильщиков в Минской области?-->
-        <div class="text-title container">
-            <div class="text-title_margin">Сколько стоят услуги ритуальных носильщиков в Минской области?</div>
-        </div>
-<!-- текст: Цена на услугу переноса гроба во время-->
-        <div class="text-page container">
-            <div class="text-page_margin">Цена на услугу переноса гроба во время похорон фиксированная. При заключении договора она прописывается сразу и не меняется ни при каких обстоятельствах. Конечно, можно сэкономить и  прибегнуть к услугам сторонних лиц, но тут тоже есть риск, так как  цена такой помощи может вам обойтись дороже, чем услуги профессиональной бригады. Наша ритуальная компания организует похороны ваших близких по всем правилам, сделает это красиво, торжественно и грамотно. Цены на наши услуги более, чем доступны. Ознакомиться с ними можно на нашем сайте. Заказать похороны под ключ у нас можно под любой бюджет.</div>
-        </div>
-<!-- блок с телефонами -->
-        <div class="tel-contacts">
-            <div class="tel-contacts__a1">
-                <div class="tel-contacts__a1-img">
-                    <picture class="tel-contacts__picture">
-                        <source srcset="img/__ritual-agent/4.webp" type="image/webp">
-                        <img src="img/__ritual-agent/4.jpg" alt="alt">
-                    </picture>
-                </div>
-                <a href="tel:+375447695139" class="tel-contacts__a1-tel">+375 (44) 769 51 39</a>
-            </div>
-            <div class="tel-contacts__mts">
-                <div class="tel-contacts__mts-img">
-                    <picture class="tel-contacts__picture">
-                        <source srcset="img/__ritual-agent/5.webp" type="image/webp">
-                        <img src="img/__ritual-agent/5.jpg" alt="alt">
-                    </picture>
-                </div>
-                <a href="tel:+375295057052" class="tel-contacts__mts-tel">+375 (29) 505 70 52</a>
-            </div>
-            <div class="tel-contacts__clock">круглосуточно</div>
-        </div>
+            <!-- шапка -->
+                    <div class="heder-page heder-page_margin">
+                        <h1 class="heder-page__title">НОСИЛЬЩИКИ ГРОБА</h1>
+                        <div class="heder-page__img">
+                            <picture>
+                                <source srcset="img/home/grob-500.webp" type="image/webp" media="(max-width: 750px)">
+                                <source srcset="img/home/grob-500.jpg" type="image/jpeg" media="(max-width: 750px)">
+                                <source srcset="img/home/grob.webp" type="image/webp">
+                                <img src="img/home/grob.jpg" alt="фото гроба">
+                            </picture>
+                        </div>
+                    </div>
+            <!-- текст: В народе существует мнение-->
+                    <div class="text-page container">
+                        <div class="text-page_margin">В народе существует мнение, что должна быть не только праведная жизнь, но и «правильная» смерть. Еще на Руси люди заранее приобретали ритуальные принадлежности. Обязательно следили за тем, чтобы усопший был крещеным, не пил, соблюдал все ритуалы при жизни.  Только при таких обстоятельствах во время  похорон его несли на специальных полотенцах к месту захоронения.  Правильно выполнить церемонию захоронения помогали носильщики гроба.</div>
+                    </div>
+            <!-- IMG: выносят гроб -->
+                    <div class="text-img container">
+                        <picture>
+                            <source srcset="img/__loaders/1-500.webp" type="image/webp" media="(max-width: 750px)">
+                            <source srcset="img/__loaders/1-500.jpg" type="image/jpeg" media="(max-width: 750px)">
+                            <source srcset="img/__loaders/1.webp" type="image/webp">
+                            <img src="img/__loaders/1.jpg" alt="выносят гроб">
+                        </picture>
+                    </div>
+            <!-- title: Почему родственникам нельзя нести гроб?-->
+                    <div class="text-title container">
+                        <div class="text-title_margin">Почему родственникам нельзя нести гроб?</div>
+                    </div>
+            <!-- текст: -->
+                    <div class="text-page container">
+                        <div class="text-page_margin">Существовало такое мнение, что если родственник несет гроб, то он не скорбит, а радуется утрате. Кроме того, считалось, что если кровный родственник будет нести гроб, то это приведет к его быстрой кончине. Конечно, век суеверий уже позади, но все же традиции сохранились. Чаще всего для того, чтобы нести гроб приглашают соседей, коллег умершего. Но это тоже неудобно, ведь для некоторых это испытание, психологическая травма. Сегодня существуют специально обученные люди, которые помогают вынести гроб и делают это красиво. Носильщики гроба повязывают на руку полотенце, на рукав — траурную ленту. Они обязательно выглядят презентабельно и облачены в красивую траурную одежду. Таким образом они выражают уважение к усопшему и его родственникам, что в такой ситуации очень важно. И если раньше считалось, что гроб обязательно нужно было 3 раза ударить об порог, чтобы душа покойного не возвращалась домой, то сейчас важно аккуратно вынести покойного. Необходимо делать это спокойно, не задев косяки. Опять же, это уважение к родственникам и усопшему. Профессиональные ритуальные грузчики понимают, как важно сработать слаженно, четко и при этом красиво. Донести гроб до катафалка, места захоронения не так просто как кажется. Несущие должны идти в одном темпе, правильно поддерживать гроб, чтобы не только удержать его, но и придать церемонии величественности. Бригада носильщиков состоит чаще всего из 4-6 человек. Если это профессионалы, то они всегда одеты в соответствии с траурным этикетом, поведение их на похоронах сдержанное и деликатное. От их действий зависит сохранность тела в транспорте при перевозке, да и то, как будет выглядеть процедура переноса усопшего. Ритуальные носильщики задают ритм церемонии, выполняют свою работу профессионально и слаженно. Стоимость же их услуг не так и высока.</div>
+                    </div>
+            <!-- title: Услуга переноса гроба в Минске-->
+                    <div class="text-title container">
+                        <div class="text-title_margin">Услуга переноса гроба в Минске</div>
+                    </div>
+            <!-- текст: У нас работают опытные ритуальные-->
+                    <div class="text-page container">
+                        <div class="text-page_margin">У нас работают опытные ритуальные грузчики, которые делают все для того, чтобы церемония похорон и переноса усопшего прошла торжественно и очень душевно. Во главе процессии обязательно несут портрет покойного, далее идут носильщики с покойным. Выносят усопшего вперед ногами. После усопшего идут родственники, друзья и близкие. В самом конце процессии – остальные участники. Работа ритуальных носильщиков во время похорон заключается в переносе гроба, доставке его к месту отпевания. Также наши сотрудники помогают доставить тело к месту погребения и опускают гроб в могилу. При необходимости открыть крышку делается это аккуратно, быстро, без повреждений гроба, покойного.</div>
+                    </div>
+            <!-- IMG: несут гроб-->
+                    <div class="text-img container">
+                        <picture>
+                            <source srcset="img/__loaders/2-500.webp" type="image/webp" media="(max-width: 750px)">
+                            <source srcset="img/__loaders/2-500.jpg" type="image/jpeg" media="(max-width: 750px)">
+                            <source srcset="img/__loaders/2.webp" type="image/webp">
+                            <img src="img/__loaders/2.jpg" alt="несут гроб">
+                        </picture>
+                    </div>
+            <!-- title: Сколько стоят услуги ритуальных носильщиков в Минской области?-->
+                    <div class="text-title container">
+                        <div class="text-title_margin">Сколько стоят услуги ритуальных носильщиков в Минской области?</div>
+                    </div>
+            <!-- текст: Цена на услугу переноса гроба во время-->
+                    <div class="text-page container">
+                        <div class="text-page_margin">Цена на услугу переноса гроба во время похорон фиксированная. При заключении договора она прописывается сразу и не меняется ни при каких обстоятельствах. Конечно, можно сэкономить и  прибегнуть к услугам сторонних лиц, но тут тоже есть риск, так как  цена такой помощи может вам обойтись дороже, чем услуги профессиональной бригады. Наша ритуальная компания организует похороны ваших близких по всем правилам, сделает это красиво, торжественно и грамотно. Цены на наши услуги более, чем доступны. Ознакомиться с ними можно на нашем сайте. Заказать похороны под ключ у нас можно под любой бюджет.</div>
+                    </div>
+            <!-- блок с телефонами -->
+                    <div class="tel-contacts">
+                        <div class="tel-contacts__a1">
+                            <div class="tel-contacts__a1-img">
+                                <picture class="tel-contacts__picture">
+                                    <source srcset="img/__ritual-agent/4.webp" type="image/webp">
+                                    <img src="img/__ritual-agent/4.jpg" alt="alt">
+                                </picture>
+                            </div>
+                            <a href="tel:+375447695139" class="tel-contacts__a1-tel">+375 (44) 769 51 39</a>
+                        </div>
+                        <div class="tel-contacts__mts">
+                            <div class="tel-contacts__mts-img">
+                                <picture class="tel-contacts__picture">
+                                    <source srcset="img/__ritual-agent/5.webp" type="image/webp">
+                                    <img src="img/__ritual-agent/5.jpg" alt="alt">
+                                </picture>
+                            </div>
+                            <a href="tel:+375295057052" class="tel-contacts__mts-tel">+375 (29) 505 70 52</a>
+                        </div>
+                        <div class="tel-contacts__clock">круглосуточно</div>
+                    </div>
         </main>
-        <!--= footer -->
-        <footer class="footer">
-            <div class="footer__item-img">
-                <picture>
-                    <source srcset="img/footer/Logo-1.webp" type="image/webp">
-                    <img loading="lazy" class="footer__img" src="img/footer/Logo-1.jpg"  alt="логотип похороны в минске" width="298" height="100">
-                </picture>
-            </div>
-            <div class="footer__item">
-                <div class="footer__title">адрес</div>
-                <div class="footer__text">г.Минск</div>
-                <div class="footer__text">пр-т Партизанский 5</div>
-            </div>
-            <div class="footer__item">
-                <div class="footer__title">телефоны</div>
-                <a class="footer__text" href="tel:+375447695139">+375447695139</a>
-                <a class="footer__text" href="tel:+375295057052">+375295057052</a>
-            </div>
-            <div class="footer__item">
-                <div class="footer__title">часы работы</div>
-                <div class="footer__text">24 часа</div>
-                <div class="footer__text">круглосуточно</div>
-            </div>
-        </footer>
-        <!-- end wrapper -->
-    </div>
 
-<script src="dist/bundle.js?v=2.6"></script>
+        <!--* footer -->
+        <%- include('./modules/footer.ejs') %>
+
 </body>
 </html>
