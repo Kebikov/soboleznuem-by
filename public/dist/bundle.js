@@ -805,7 +805,7 @@ async function currentUser() {
     let id = null;
     console.log('Run def', (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])());
     const div = document.querySelector('.coffin-img');
-    localStorage.clear();
+    //localStorage.clear();
 
     if(div) {
         const getId = localStorage.getItem('idLog');
@@ -898,6 +898,104 @@ async function currentUser() {
         //         .catch(err => console.log('Error fetch >>>', err));
         //         //*---
         //     });
+
+/***/ }),
+
+/***/ "./public/js/modules/data-users.js":
+/*!*****************************************!*\
+  !*** ./public/js/modules/data-users.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function dataUsers() {
+    const work = document.querySelector('[data-script="data-users"]');
+    if(work) {
+        const choiceDate = document.querySelector('.curent-data__menu');
+        const form = document.forms['date-sort'];
+
+        choiceDate.addEventListener('click', () => {
+            const dataPopUp = document.querySelector('.data-pop-up');
+            dataPopUp.style.display = 'block';
+            const date = new Date();
+            form.year.value = date.getFullYear();
+            form.month.value = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
+            form.day.value = date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate();
+        });
+
+        // form.addEventListener('submit', (e) => {
+        //     e.preventDefault();
+        //     const obj = {
+        //         year: form.year.value,
+        //         month: form.month.value,
+        //         day: form.day.value
+        //     }
+
+        //     console.log('',obj);
+        //     fetch('/data-users', {
+        //         method: 'POST',
+        //         headers: {'Content-Type': 'application/json'},
+        //         body: JSON.stringify(obj)
+        //     })
+        //     .then(() => {});
+        // });
+    }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dataUsers);
+
+/***/ }),
+
+/***/ "./public/js/modules/input-password.js":
+/*!*********************************************!*\
+  !*** ./public/js/modules/input-password.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function inputPassword() {
+    const work = document.querySelector('[data-script="admin"]');
+    if(work){
+        const form = document.forms.admin;
+        let login = localStorage.getItem('login');
+        let password = localStorage.getItem('password');
+        if(login) {
+            form.login.value = login;
+            form.password.value = password;
+        }
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            login = form.login.value;
+            password = form.password.value;
+            localStorage.setItem('login', login);
+            localStorage.setItem('password', password);
+
+            fetch('/admin-filippov', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({login, password})
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.res) {
+                    localStorage.setItem('access', 'ok');
+                    window.location.href = '/data-start';
+                }else{
+                    delete localStorage.access;
+                    return
+                }
+            });
+        });
+    }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inputPassword);
 
 /***/ }),
 
@@ -1507,6 +1605,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/popup */ "./public/js/modules/popup.js");
 /* harmony import */ var _modules_changePosobie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/changePosobie */ "./public/js/modules/changePosobie.js");
 /* harmony import */ var _modules_current_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/current-user */ "./public/js/modules/current-user.js");
+/* harmony import */ var _modules_input_password__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/input-password */ "./public/js/modules/input-password.js");
+/* harmony import */ var _modules_data_users__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/data-users */ "./public/js/modules/data-users.js");
+
+
 
 
 
@@ -1521,6 +1623,8 @@ window.addEventListener('DOMContentLoaded', () => {
     (0,_modules_popup__WEBPACK_IMPORTED_MODULE_3__["default"])();
     (0,_modules_changePosobie__WEBPACK_IMPORTED_MODULE_4__["default"])();
     (0,_modules_current_user__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    (0,_modules_input_password__WEBPACK_IMPORTED_MODULE_6__["default"])();
+    (0,_modules_data_users__WEBPACK_IMPORTED_MODULE_7__["default"])();
 });
 
 })();

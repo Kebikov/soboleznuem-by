@@ -4,6 +4,8 @@ import shopSortFn from "./modules/shop-sort";
 import popUpFn from './modules/popup';
 import changePos from './modules/changePosobie';
 import currentUser from "./modules/current-user";
+import inputPassword from "./modules/input-password";
+import dataUsers from "./modules/data-users";
 
 window.addEventListener('DOMContentLoaded', () => {
     mainFn();
@@ -12,4 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
     popUpFn();
     changePos();
     currentUser();
+    inputPassword();
+    dataUsers();
 });

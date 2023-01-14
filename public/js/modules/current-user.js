@@ -5,7 +5,7 @@ async function currentUser() {
     let id = null;
     console.log('Run def', uuidv4());
     const div = document.querySelector('.coffin-img');
-    localStorage.clear();
+    //localStorage.clear();
 
     if(div) {
         const getId = localStorage.getItem('idLog');

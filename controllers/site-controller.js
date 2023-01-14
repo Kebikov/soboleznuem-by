@@ -1,4 +1,5 @@
 const createPath = require('../helpers/create-path');
+const {pool, promisePool} = require('../helpers/pool');
 
 const getPageShopWreaths = (req, res) => {
     const title = 'Венок ритуальный купить в Минске - цена венков для похорон';
@@ -157,6 +158,18 @@ const getPageAdminFilippov = (req, res) => {
     res.render(createPath('admin-filippov'), {title,description});
 }
 
+const getPageDataStart = (req, res) => {
+    const title = 'DataStart';
+    const description = 'DataStart';
+    res.render(createPath('data-start'), {title,description});
+}
+
+const getPageDataUsers = (req, res) => {
+    const curentDate = 'Выберите дату для сортировки.'
+    const arrInfo = [];
+    res.render(createPath('data-users'), {curentDate, arrInfo});
+}
+
 module.exports = {
     getPageContacts,
     getPageShopWreaths,
@@ -183,5 +196,15 @@ module.exports = {
     getPageMorguesInMinsk,
     getPageReviews,
     getPageCalc,
-    getPageAdminFilippov
+    getPageAdminFilippov,
+    getPageDataStart,
+    getPageDataUsers
 };
+
+
+
+
+
+
+
+

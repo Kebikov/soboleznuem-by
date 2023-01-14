@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+
+<!--* head -->
+<%- include('./modules/head.ejs') %>
+
+<body>
+
+    <!--* google-tag-noscript -->
+    <%- include('./modules/google-tag-noscript.ejs') %>
+
+    <div class="wrapper">
+
+        <!--* heder -->
+        <%- include('./modules/header.ejs') %>
+
+        <!--= main code -->
+        <div class="data-start">
+            <div class="data-start__body">
+                <a href="/data-users" class="data-start__info">
+                    <div class="data-start__info-body">
+                        Данные IP
+                    </div>
+                </a>
+                <a href="#" class="data-start__replace">
+                    <div class="data-start__replace-body">
+                        Изминение информации
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--* footer -->
+        <%- include('./modules/footer.ejs') %>
+        <%- include('./modules//script-back.ejs') %>
+</body>
+</html>

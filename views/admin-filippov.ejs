@@ -17,6 +17,7 @@
         <!-- main code -->
         <!--= main -->
         <main class="main">
+            <div data-script="admin"></div>
             <!-- шапка -->
             <div class="heder-page heder-page_margin">
                 <h1 class="heder-page__title">ADMIN</h1>
@@ -31,14 +32,12 @@
             </div>
     
             <!--= Form-Admin -->
-            <div class="form-body">
-                <form class="form-admin" name="admin">
-                    <label class="form-admin__label" for="textPrace">Текст пособия</label>
-                    <textarea name="textPrace" class="form-admin__input" type="text" id="textPrace" rows="3"></textarea>
-                    <label class="form-admin__label" for="prace">Cумма пособия</label>
-                    <input name="prace" class="form-admin__input" type="text" id="prace">
-                    <label class="form-admin__label" for="year">Текуший год</label>
-                    <input name="year" class="form-admin__input" type="text" id="year">
+            <div class="form-body" >
+                <form class="form-admin" name="admin" method="post" action="/admin-filippov">
+                    <label class="form-admin__label" for="login">Login</label>
+                    <input name="login" class="form-admin__input" type="text" id="prace">
+                    <label class="form-admin__label" for="password">Password</label>
+                    <input name="password" class="form-admin__input" type="password" id="year">
     
                     <button class="form-admin__button" type="submit" >отправить</button>
                 </form>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+
+<!--* head -->
+<%- include('./modules/head.ejs') %>
+
+<body>
+
+    <!--* google-tag-noscript -->
+    <%- include('./modules/google-tag-noscript.ejs') %>
+
+    <div class="wrapper">
+
+        <!--* heder -->
+        <%- include('./modules/header.ejs') %>
+
+        <!-- main code -->
+        <div data-script="data-users" ></div>
+        <div class="wrapper-data">
+            <div class="curent-data">
+                <div class="curent-data__body">
+                    <div class="curent-data__curent">
+                        Сводка:<br>
+                        <span>На дату: <%= curentDate %> </span>
+                    </div>
+                    <div class="curent-data__menu">
+                        <img src="/img/date/date.png" alt="#">
+                    </div>
+                </div>
+            </div>
+
+            <% if (arrInfo.length) { %>
+                <% arrInfo.forEach(({ id, countExitDay, countExitAll }) => { %>
+                    <div class="user" data-id="<%= id %>">
+                        <div class="user__body">
+                            <div class="user__name">
+                                USER:<br>
+                                <span><%= id %></span>
+                            </div>
+                            <div class="user__down">
+                                <div class="user__today-exit">
+                                    Сегодня:<br>
+                                    <span><%= countExitDay %></span>
+                                </div>
+                                <div class="user__all-exit">
+                                    Всего:<br>
+                                    <span><%= countExitAll %></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %>
+
+            <div class="data-pop-up">
+                <div class="data-pop-up__body">
+                    <form name="date-sort" action="/data-users" method="post" class="data-pop-up__form">
+
+                        <label for="year" class="data-pop-up__lable">Введите год:</label>
+                        <input name="year" id="year" type="number" class="data-pop-up__input" placeholder="2023">
+
+                        <label for="month" class="data-pop-up__lable">Введите месяц:</label>
+                        <input name="month" id="month" type="number" class="data-pop-up__input" placeholder="01">
+
+                        <label for="day" class="data-pop-up__lable">Введите день:</label>
+                        <input name="day" id="day" type="number" class="data-pop-up__input" placeholder="01">
+
+                        <button type="sabmit" class="data-pop-up__button">ОТПРАВИТЬ</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!--* footer -->
+        <%- include('./modules/footer.ejs') %>
+        <%- include('./modules/script-back.ejs') %>
+</body>
+</html>

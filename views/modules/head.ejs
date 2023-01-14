@@ -1,11 +1,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<%= description %>">
+    <meta name="description" content="<%= typeof description != 'undefined' ? description : 'not' %>">
     <meta name="theme-color" content="#ba9f5a">
     <link rel="icon" type="image/png" href="img/home/favicon.png">
-    <link rel="stylesheet" href="../css/style.css">
-    <title><%= title %></title>
+    <link rel="stylesheet" href="../css/style.css?v=2.6">
+    <title><%= typeof title != 'undefined' ? title : 'not' %></title>
 
     <!-- Yandex.Metrika counter -->
     <!-- <script type="text/javascript" >
