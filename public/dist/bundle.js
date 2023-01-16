@@ -803,19 +803,17 @@ __webpack_require__.r(__webpack_exports__);
 //= currentUser 
 async function currentUser() {
     let id = null;
-    console.log('Run def', (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])());
     const div = document.querySelector('.coffin-img');
-    //localStorage.clear();
+    //delete localStorage.idLog;
 
     if(div) {
         const getId = localStorage.getItem('idLog');
         if(getId) {
-            console.log('id есть уже !');
             id = getId;
         }else{
             console.log('устанавливаем id !');
             const currentId = (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])();
-            localStorage.setItem('idLog', currentId);
+            localStorage.setItem('idLog', currentId); 
             id = currentId;
         }
         getToken();
@@ -836,7 +834,7 @@ async function currentUser() {
         fetch(`https://ipinfo.io/json?token=${token}`)
             .then(res => res.json())
             .then(json => {
-                console.log('SEND >>> ', json.ip, json.city, json.org, id);
+                //console.log('SEND >>> ', json.ip, json.city, json.org, id);
                 const ip = json.ip;
                 const city = json.city;
                 const lan = json.org;
@@ -851,7 +849,8 @@ async function currentUser() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ip, id, city, lan}),
         })
-        .then(res => console.log('Status Fetch >>>', res.status))
+        .then(res => res.text())
+        .then(data => console.log('Status Fetch >>>', data))
         .catch(err => console.log('Error fetch / >>>', err));
     }
 
@@ -901,6 +900,97 @@ async function currentUser() {
 
 /***/ }),
 
+/***/ "./public/js/modules/data-user.js":
+/*!****************************************!*\
+  !*** ./public/js/modules/data-user.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function dataUser() {
+    const work = document.querySelector('[data-script="data-user"]');
+    if(work) {
+        const bookmarkS = document.querySelectorAll('.bookmark-img');
+        const userNameFix = document.querySelector('.curent-data__curent');
+        const popup = document.querySelector('.set-name');
+        const exit = document.querySelector('.set-name__close');
+        const form = document.forms['update-name'];
+        const goBack = document.querySelector('.curent-data__menu');
+
+        goBack.addEventListener('click', (e) => {
+            localStorage.setItem('goBack', 'yes');
+            window.history.back();
+        });
+
+        bookmarkS.forEach(item => {
+            item.addEventListener('click', (e) => {
+                const ip = e.target.dataset.ip;
+                const status = e.target.dataset.statusset;
+                console.log('Books >>> ', ip, status);
+
+                fetch('/update-status', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({status, ip})
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if(data.res === 'ok data') {
+                            window.location.reload();
+                        }else{
+                            console.log('Error in file > data-user.js');
+                        }
+                    });
+            });
+        });
+
+        userNameFix.addEventListener('click', (e) => {
+            const id = e.target.closest('.curent-data__curent').dataset.id;
+            const curentName = e.target.closest('.curent-data__curent').dataset.name;
+            console.log('ID >>> ',id);
+            console.log('Name >>> ',curentName);
+            popup.style.display = 'block';
+            form.name.value = curentName;
+
+            form.addEventListener('submit', (ev) => submit(ev,id, curentName));
+        });
+
+        exit.addEventListener('click', (e) => {
+            popup.style.display = 'none';
+        });
+
+        function submit(ev,id, curentName) {
+            ev.preventDefault();
+            localStorage.setItem('sendNewNameUser', 'yes');
+            console.log('Submit ID >>> ', id, curentName);
+
+            const newName = form.name.value;
+            console.log('NEW Name >>> ', newName);
+            fetch('/update-name', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({id, newName})
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.res === 'update ok') {
+                    window.location.reload();
+                }else{
+                    console.log('Error in file data-user.js');
+                }
+            })
+            .catch(err => console.log('Error fetch in file data-user.js', err));
+        }
+    }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dataUser);
+
+/***/ }),
+
 /***/ "./public/js/modules/data-users.js":
 /*!*****************************************!*\
   !*** ./public/js/modules/data-users.js ***!
@@ -911,37 +1001,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+
 function dataUsers() {
     const work = document.querySelector('[data-script="data-users"]');
     if(work) {
+        //* reload page
+        const go = localStorage.getItem('goBack');
+        const sendNewNameUser = localStorage.getItem('sendNewNameUser');
+    
+        if(go === 'yes' && sendNewNameUser === 'yes') {
+            localStorage.removeItem('goBack');
+            localStorage.removeItem('sendNewNameUser'); 
+            window.location.reload();  
+        }   
+
+        //* main code
         const choiceDate = document.querySelector('.curent-data__menu');
         const form = document.forms['date-sort'];
+        const dataPopUp = document.querySelector('.data-pop-up');
+        const close = document.querySelector('.data-pop-up__close');
+        
+        close.addEventListener('click', () => {
+            dataPopUp.style.display = 'none';
+        });
 
         choiceDate.addEventListener('click', () => {
-            const dataPopUp = document.querySelector('.data-pop-up');
             dataPopUp.style.display = 'block';
             const date = new Date();
             form.year.value = date.getFullYear();
             form.month.value = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
             form.day.value = date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate();
         });
-
-        // form.addEventListener('submit', (e) => {
-        //     e.preventDefault();
-        //     const obj = {
-        //         year: form.year.value,
-        //         month: form.month.value,
-        //         day: form.day.value
-        //     }
-
-        //     console.log('',obj);
-        //     fetch('/data-users', {
-        //         method: 'POST',
-        //         headers: {'Content-Type': 'application/json'},
-        //         body: JSON.stringify(obj)
-        //     })
-        //     .then(() => {});
-        // });
     }
 }
 
@@ -1607,6 +1697,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_current_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/current-user */ "./public/js/modules/current-user.js");
 /* harmony import */ var _modules_input_password__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/input-password */ "./public/js/modules/input-password.js");
 /* harmony import */ var _modules_data_users__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/data-users */ "./public/js/modules/data-users.js");
+/* harmony import */ var _modules_data_user__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/data-user */ "./public/js/modules/data-user.js");
+
 
 
 
@@ -1625,6 +1717,7 @@ window.addEventListener('DOMContentLoaded', () => {
     (0,_modules_current_user__WEBPACK_IMPORTED_MODULE_5__["default"])();
     (0,_modules_input_password__WEBPACK_IMPORTED_MODULE_6__["default"])();
     (0,_modules_data_users__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    (0,_modules_data_user__WEBPACK_IMPORTED_MODULE_8__["default"])();
 });
 
 })();

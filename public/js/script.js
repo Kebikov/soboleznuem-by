@@ -6,6 +6,7 @@ import changePos from './modules/changePosobie';
 import currentUser from "./modules/current-user";
 import inputPassword from "./modules/input-password";
 import dataUsers from "./modules/data-users";
+import dataUser from "./modules/data-user";
 
 window.addEventListener('DOMContentLoaded', () => {
     mainFn();
@@ -16,4 +17,5 @@ window.addEventListener('DOMContentLoaded', () => {
     currentUser();
     inputPassword();
     dataUsers();
+    dataUser();
 });

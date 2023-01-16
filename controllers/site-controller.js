@@ -159,15 +159,16 @@ const getPageAdminFilippov = (req, res) => {
 }
 
 const getPageDataStart = (req, res) => {
-    const title = 'DataStart';
+    const title = 'Admin';
     const description = 'DataStart';
     res.render(createPath('data-start'), {title,description});
 }
 
 const getPageDataUsers = (req, res) => {
+    const title ='Admin';
     const curentDate = 'Выберите дату для сортировки.'
     const arrInfo = [];
-    res.render(createPath('data-users'), {curentDate, arrInfo});
+    res.render(createPath('data-users'), {curentDate, arrInfo, title});
 }
 
 module.exports = {

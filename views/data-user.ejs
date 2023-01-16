@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+
+<!--* head -->
+<%- include('./modules/head.ejs') %>
+
+<body>
+
+    <!--* google-tag-noscript -->
+    <%- include('./modules/google-tag-noscript.ejs') %>
+
+    <div class="wrapper">
+
+        <!--* heder -->
+        <%- include('./modules/header.ejs') %>
+
+        <!-- main code -->
+        <div data-script="data-user" ></div>
+        <div class="wrapper-data">
+            <div class="curent-data">
+                <div class="curent-data__body">
+                    <div class="curent-data__curent pointer" data-id="<%= id %>" data-name="<%= curentName %>" >
+                        USER: <p class="tc-blue" ><%= curentName ? curentName : '' %></p><br>
+                        <span><%= id %></span>
+                    </div>
+                    <div class="curent-data__menu" >
+                        <img src="/img/date/back_arrow.png" alt="#">
+                    </div>
+                </div>
+            </div>
+
+            <% if (infoUser.length) { %>
+                <% infoUser.forEach((item) => { %>
+                    <div class="user" data-id="<%= id %>">
+                        <div class="bookmark-user" >
+                            <% if(item.status === 0) { %>
+                                <img src="/img/date/bookmark.png" alt="#" class="bookmark-img" data-ip="<%= item['INET_NTOA(ip)'] %>" data-statusset="1" >
+                            <% }else{ %>
+                                <img src="/img/date/bookmark-red.png" alt="#" class="bookmark-img" data-ip="<%= item['INET_NTOA(ip)'] %>" data-statusset="0" >
+                            <% } %>
+                        </div>
+                        <div class="user__body">
+                            <div class="user__name">
+                                IP:<br><%= item['INET_NTOA(ip)'] %>
+                            </div>
+                            <div class="user__name">
+                                Lan:<br><%= item.lan %>
+                            </div>
+                            <div class="user__down">
+                                <div class="user__today-exit">
+                                    Город:<br>
+                                    <span><%= item.city %></span>
+                                </div>
+                                <div class="user__all-exit">
+                                    Время:<br>
+                                    <span><%= item.time.toLocaleString('ru-RU') %></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %>
+
+            <!--= form update name user -->
+            <div class="set-name">
+                <div class="set-name__body">
+                    <div class="set-name__close">
+                        <img src="/img/date/close.png" alt="#">
+                    </div>
+                    <form name="update-name" action="/update-name" method="post" class="set-name__form">
+                        <label for="name" class="set-name__lable">Правка имени:</label>
+                        <input name="name" id="name" type="text" class="set-name__input" >
+                        <button type="sabmit" class="set-name__button">ОТПРАВИТЬ</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!--* footer -->
+        <%- include('./modules/footer.ejs') %>
+        <%- include('./modules/script-back.ejs') %>
+</body>
+</html>
