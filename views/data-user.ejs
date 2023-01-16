@@ -17,16 +17,23 @@
         <!-- main code -->
         <div data-script="data-user" ></div>
         <div class="wrapper-data">
-            <div class="curent-data">
-                <div class="curent-data__body">
-                    <div class="curent-data__curent pointer" data-id="<%= id %>" data-name="<%= curentName %>" >
-                        USER: <p class="tc-blue" ><%= curentName ? curentName : '' %></p><br>
-                        <span><%= id %></span>
+
+            <div class="curent-user">
+                <div class="curent-user__body">
+                    <div class="curent-user__left" data-id="<%= id %>" data-name="<%= curentName %>" >
+                        <div class="curent-user__avatar">
+                            <img src="/img/date/user.png" alt="">
+                        </div>
+                        <div class="curent-user__curent pointer" data-id="<%= id %>" data-name="<%= curentName %>" >
+                            USER: <p class="tc-blue" ><%= curentName ? curentName : '' %></p>
+                        </div>
                     </div>
-                    <div class="curent-data__menu" >
+                    <div class="curent-user__menu" >
                         <img src="/img/date/back_arrow.png" alt="#">
                     </div>
+                    <div class="curent-user__id"><%= id %></div>
                 </div>
+                
             </div>
 
             <% if (infoUser.length) { %>

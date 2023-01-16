@@ -3739,7 +3739,13 @@ body.active {
 }
 
 .data-start {
-  width: 100%;
+  width: 700px;
+  margin: 0 auto;
+}
+@media (max-width: 1020px) {
+  .data-start {
+    width: 90vw;
+  }
 }
 .data-start__body {
   display: -webkit-box;
@@ -3760,6 +3766,11 @@ body.active {
   font-weight: 400;
   font-size: 24px;
   text-decoration: none;
+}
+@media (max-width: 1020px) {
+  .data-start__body {
+    font-size: 20px;
+  }
 }
 .data-start__info {
   margin: 40px 0px 40px 0px;
@@ -3967,6 +3978,9 @@ body.active {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
+.data-pop-up__body {
+  padding: 20px;
+}
 .data-pop-up__close {
   position: absolute;
   top: 15px;
@@ -4024,6 +4038,11 @@ body.active {
           box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
   margin: 0px 0px 20px 0px;
   padding: 5px 0px 5px 0px;
+}
+@media (max-width: 1020px) {
+  .data-pop-up__input {
+    width: 80vw;
+  }
 }
 .data-pop-up__button {
   margin: 20px 0px 0px 0px;
@@ -4131,6 +4150,11 @@ body.active {
   margin: 0px 0px 20px 0px;
   padding: 5px 0px 5px 0px;
 }
+@media (max-width: 1020px) {
+  .set-name__input {
+    width: 80vw;
+  }
+}
 .set-name__button {
   margin: 20px 0px 0px 0px;
   font-family: "Montserrat";
@@ -4140,4 +4164,201 @@ body.active {
   padding: 10px 20px 10px 20px;
   -webkit-box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
           box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+}
+
+.curent-user {
+  padding: 10px 0px 20px 0px;
+  margin: 0 auto;
+  width: 500px;
+}
+@media (max-width: 700px) {
+  .curent-user {
+    width: 90%;
+  }
+}
+.curent-user__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 10px 34px 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+}
+.curent-user__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.curent-user__id {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  white-space: nowrap;
+  color: #5B5B5B;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 15px;
+}
+.curent-user__avatar {
+  min-width: 50px;
+  height: 50px;
+  margin: 0px 10px 0px 0px;
+}
+.curent-user__avatar img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.curent-user__curent {
+  color: #5B5B5B;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 120%;
+}
+.curent-user__curent.pointer {
+  cursor: pointer;
+}
+.curent-user__curent span {
+  font-weight: 500;
+}
+.curent-user__menu {
+  cursor: pointer;
+}
+.curent-user__menu img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.change {
+  display: block;
+  margin: 0 auto;
+}
+.change__body {
+  padding: 20px;
+}
+.change__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+}
+.change__close img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;
+  cursor: pointer;
+}
+.change__form {
+  width: 800px;
+  background: #fff;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.45) 0px 2px 15px -1px, rgba(0, 0, 0, 0.5) 0px 1px 13px -1px;
+          box-shadow: rgba(50, 50, 93, 0.45) 0px 2px 15px -1px, rgba(0, 0, 0, 0.5) 0px 1px 13px -1px;
+  padding: 40px 0px 40px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  position: relative;
+}
+@media (max-width: 1020px) {
+  .change__form {
+    width: 90vw;
+  }
+}
+.change__text-area {
+  font-family: "Montserrat";
+  font-size: 20px;
+  color: #5B5B5B;
+  text-align: center;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+  margin: 0px 0px 20px 0px;
+  padding: 5px 0px 5px 0px;
+  width: 600px;
+}
+@media (max-width: 1020px) {
+  .change__text-area {
+    width: 80vw;
+  }
+}
+.change__lable {
+  font-family: "Montserrat";
+  font-size: 20px;
+  color: #5B5B5B;
+  margin: 0px 0px 3px 0px;
+}
+.change__input {
+  font-family: "Montserrat";
+  font-size: 24px;
+  color: #5B5B5B;
+  text-align: center;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+  margin: 0px 0px 20px 0px;
+  padding: 5px 0px 5px 0px;
+  width: 600px;
+}
+@media (max-width: 1020px) {
+  .change__input {
+    width: 80vw;
+  }
+}
+.change__button {
+  margin: 20px 0px 0px 0px;
+  font-family: "Montserrat";
+  font-size: 20px;
+  color: #5B5B5B;
+  background-color: #fff;
+  padding: 10px 20px 10px 20px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+}
+
+.loading {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.loading img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }

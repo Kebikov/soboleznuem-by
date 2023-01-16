@@ -2,6 +2,7 @@ const express = require('express');
 const siteRouters = require('./routes/site-routes');
 const postRouters = require('./routes/post-routes');
 const createPath = require('./helpers/create-path');
+const {pool, promisePool} = require('./helpers/pool');
 const app = express();
 require('dotenv').config();
 
@@ -15,10 +16,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //* Routers all 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     const title = 'Ритуальные услуги в Минске - бюро похоронных услуг';
     const description = '➤ Весь спектр похоронных услуг: захоронение, кремация, оформление места захоронения, копка могилы, услуги санитара-патологоанатома, подготовка тела к погребению.';
-    res.render(createPath('index'), { title, description });
+    const queryTextHelp = `SELECT * FROM site_info`;
+    async function getTextHelp() {
+        const [rows] = await promisePool.query(queryTextHelp);
+        return rows;
+    }
+    const columtextHelp = await getTextHelp();
+    const siteInfo = columtextHelp[0];
+
+    res.render(createPath('index'), { title, description, siteInfo });
 });
 
 app.use(siteRouters);

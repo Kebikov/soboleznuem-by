@@ -29,7 +29,8 @@ const {
     getPageCalc,
     getPageAdminFilippov,
     getPageDataStart,
-    getPageDataUsers
+    getPageDataUsers,
+    getPageDataChangeInfo
 } = require('../controllers/site-controller');
 
 router.get('/contacts', getPageContacts);
@@ -56,9 +57,10 @@ router.get('/burial-allowance', getPageBurialAllowance);
 router.get('/if-died', getPageIfDied);
 router.get('/morgues-in-minsk', getPageMorguesInMinsk);
 router.get('/reviews', getPageReviews);
-router.get('/calc', getPageCalc);
+router.get('/calc', getPageCalc); 
 router.get('/admin-filippov', getPageAdminFilippov);
 router.get('/data-start', getPageDataStart);
 router.get('/data-users', getPageDataUsers);
+router.get('/data-change-info', getPageDataChangeInfo);
 
 module.exports = router;

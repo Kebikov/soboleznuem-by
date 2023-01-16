@@ -171,6 +171,19 @@ const getPageDataUsers = (req, res) => {
     res.render(createPath('data-users'), {curentDate, arrInfo, title});
 }
 
+const getPageDataChangeInfo = async (req, res) => {
+    const title ='Admin';
+    const queryTextHelp = `SELECT * FROM site_info`;
+    async function getTextHelp() {
+        const [rows] = await promisePool.query(queryTextHelp);
+        return rows;
+    }
+    const columtextHelp = await getTextHelp();
+    const siteInfo = columtextHelp[0];
+
+    res.render(createPath('data-change-info'), {title, siteInfo});
+}
+
 module.exports = {
     getPageContacts,
     getPageShopWreaths,
@@ -199,7 +212,8 @@ module.exports = {
     getPageCalc,
     getPageAdminFilippov,
     getPageDataStart,
-    getPageDataUsers
+    getPageDataUsers,
+    getPageDataChangeInfo
 };
 
 

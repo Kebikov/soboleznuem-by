@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+
+<!--* head -->
+<%- include('./modules/head.ejs') %>
+
+<body>
+
+    <!--* google-tag-noscript -->
+    <%- include('./modules/google-tag-noscript.ejs') %>
+
+    <div class="wrapper">
+
+        <!--* heder -->
+        <%- include('./modules/header.ejs') %>
+
+        <!-- main code -->
+        <div data-script="data-change" ></div>
+
+        <div class="loading">
+            <img src="/img/date/gear.gif" alt="">
+        </div>
+
+        <div class="change">
+            <div class="change__body">
+            
+                <form name="date-sort" action="/data-change-info" method="post" class="change__form">
+                    <div class="change__close">
+                        <img src="/img/date/close.png" alt="#">
+                    </div>
+                    <label for="classic" class="change__lable">CLASSIC:</label>
+                    <input name="classic" id="classic" type="number" class="change__input" value="<%= siteInfo['classic'] %>" >
+
+                    <label for="standart" class="change__lable">STANDART:</label>
+                    <input name="standart" id="standart" type="number" class="change__input" value="<%= siteInfo['standart'] %>" >
+
+                    <label for="classicPlus" class="change__lable">CLASSIC PLUS:</label>
+                    <input name="classicPlus" id="classicPlus" type="number" class="change__input" value="<%= siteInfo['classic_plus'] %>" >
+
+                    <label for="sumPosobie" class="change__lable">Сумма пособия:</label>
+                    <input name="sumPosobie" id="sumPosobie" type="number" class="change__input" value="<%= siteInfo['money'] %>" >
+
+                    <label for="textPosobie" class="change__lable">Текст пособия:</label>
+                    <textarea name="textPosobie" id="textPosobie" type="text"  class="change__text-area" rows="4" style="resize: vertical;" ><%= siteInfo['text_help'] %></textarea>
+
+                    <button type="sabmit" class="change__button">ОТПРАВИТЬ</button>
+                </form>
+            </div>
+        </div>
+
+
+        <!--* footer -->
+        <%- include('./modules/footer.ejs') %>
+        <%- include('./modules/script-back.ejs') %>
+</body>
+</html>

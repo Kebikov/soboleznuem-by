@@ -2,11 +2,11 @@ function dataUser() {
     const work = document.querySelector('[data-script="data-user"]');
     if(work) {
         const bookmarkS = document.querySelectorAll('.bookmark-img');
-        const userNameFix = document.querySelector('.curent-data__curent');
+        const userNameFix = document.querySelector('.curent-user__left');
         const popup = document.querySelector('.set-name');
         const exit = document.querySelector('.set-name__close');
         const form = document.forms['update-name'];
-        const goBack = document.querySelector('.curent-data__menu');
+        const goBack = document.querySelector('.curent-user__menu');
 
         goBack.addEventListener('click', (e) => {
             localStorage.setItem('goBack', 'yes');
@@ -36,8 +36,8 @@ function dataUser() {
         });
 
         userNameFix.addEventListener('click', (e) => {
-            const id = e.target.closest('.curent-data__curent').dataset.id;
-            const curentName = e.target.closest('.curent-data__curent').dataset.name;
+            const id = e.target.closest('.curent-user__left').dataset.id;
+            const curentName = e.target.closest('.curent-user__left').dataset.name;
             console.log('ID >>> ',id);
             console.log('Name >>> ',curentName);
             popup.style.display = 'block';

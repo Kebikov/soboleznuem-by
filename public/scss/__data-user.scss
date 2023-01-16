@@ -70,6 +70,9 @@
         box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
         margin: 0px 0px 20px 0px;
         padding: 5px 0px 5px 0px;
+        @media (max-width: 1020px){
+            width: 80vw;
+        }
     }
     // .data-pop-up__button
     &__button {
@@ -80,5 +83,73 @@
         background-color: #fff;
         padding: 10px 20px 10px 20px;
         box-shadow: rgba(50, 50, 93, 0.35) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+    }
+}
+
+.curent-user {
+    padding: 10px 0px 20px 0px;
+    margin: 0 auto;
+    width: 500px;
+    @media (max-width: 700px){
+       width: 90%;
+    }
+    // .curent-data__body
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10px 34px 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        position: relative;
+    }
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+    &__id {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%,0);
+        white-space: nowrap;
+
+        color: #5B5B5B;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 15px;
+    }
+    &__avatar {
+        min-width: 50px;
+        height: 50px;
+        margin: 0px 10px 0px 0px;
+        & img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    // .curent-data__curent
+    &__curent {
+        color: #5B5B5B;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 120%;
+
+        &.pointer {
+            cursor: pointer;
+        }
+        & span {
+            font-weight: 500;
+        }
+    }
+    // .curent-data__menu
+    &__menu {
+        cursor: pointer;
+        & img {
+            object-fit: cover;
+            width: 40px;
+            height: 40px;
+        }
     }
 }

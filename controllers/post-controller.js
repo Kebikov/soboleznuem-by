@@ -130,11 +130,32 @@ const updateName = (req, res) => {
     })
 }
 
+const updateTextInSite = (req, res) => {
+    const {classic, standart,classicPlus,posobie,textPosobie} = req.body;
+    console.log('',classic, standart,classicPlus, posobie,textPosobie);
+    const queryUpdate = `
+        UPDATE site_info
+        SET classic = ${classic},
+            standart = ${standart},
+            classic_plus = ${classicPlus},
+            money = ${posobie},
+            text_help = '${textPosobie}'
+        WHERE id = 1`;
+    pool.query(queryUpdate, (err, data) => {
+        if(err) {
+            console.log('Error post in updateTextInSite()...', err);
+            return
+        }
+        res.send({res: 'ok'});
+    });
+}
+
 module.exports = {
     postMain,
     postAccess,
     postDataUsers,
     getPageUserInfo,
     updateStatus,  
-    updateName
+    updateName,
+    updateTextInSite
 }

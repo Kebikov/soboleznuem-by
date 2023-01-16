@@ -675,6 +675,69 @@ function calcFn () {
 
 /***/ }),
 
+/***/ "./public/js/modules/change-info.js":
+/*!******************************************!*\
+  !*** ./public/js/modules/change-info.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function changeInfo() {
+    const work = document.querySelector('[data-script="data-change"]');
+    if(work) {
+        document.querySelector('.change__close').addEventListener('click', () => {
+            window.location.href = '/data-start';
+        });
+
+        const form = document.forms['date-sort'];
+        const loading = document.querySelector('.loading');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const classic = form.classic.value;
+            const standart = form.standart.value;
+            const classicPlus = form.classicPlus.value;
+            const posobie = form.sumPosobie.value;
+            const textPosobie = form.textPosobie.value;
+            console.log('',classic, standart, classicPlus, posobie);
+            console.log('',textPosobie);
+
+            fetch('/data-change-info', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    classic,
+                    standart,
+                    classicPlus,
+                    posobie,
+                    textPosobie
+                })
+            })
+            .then(res => {
+                loading.style.display = 'block';
+                return res.json();
+            })
+            .then(data => {
+                if(data.res === 'ok') {
+                    setTimeout(() => {
+                        loading.style.display = 'none';
+                    }, 1000);
+                    return
+                }
+                console.log('Error fetch /data-change-info...');
+            })
+
+        });
+    }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (changeInfo);
+
+/***/ }),
+
 /***/ "./public/js/modules/changePosobie.js":
 /*!********************************************!*\
   !*** ./public/js/modules/changePosobie.js ***!
@@ -687,21 +750,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function changePos() {
     try {
-        const elTextPraceAll = document.querySelectorAll('[data-textPrace]');
+        //const elTextPraceAll = document.querySelectorAll('[data-textPrace]');
         const elPrace = document.querySelector('[data-prace]');
 
         const data = new Date();
         const time = data.getTime();
 
-        if(elTextPraceAll){
-            fetch(`../../ajax/posobie.json?v=${time}`)
-            .then(data => data.json())
-            .then(data => {
-                elTextPraceAll.forEach(item => {
-                item.innerHTML = data.textPrace;
-            });
-        });
-        }
+        // if(elTextPraceAll){
+        //     fetch(`../../ajax/posobie.json?v=${time}`)
+        //     .then(data => data.json())
+        //     .then(data => {
+        //         elTextPraceAll.forEach(item => {
+        //         item.innerHTML = data.textPrace;
+        //     });
+        // });
+        // }
 
         if(elPrace) {
             fetch(`../../ajax/posobie.json?v=${time}`)
@@ -914,11 +977,11 @@ function dataUser() {
     const work = document.querySelector('[data-script="data-user"]');
     if(work) {
         const bookmarkS = document.querySelectorAll('.bookmark-img');
-        const userNameFix = document.querySelector('.curent-data__curent');
+        const userNameFix = document.querySelector('.curent-user__left');
         const popup = document.querySelector('.set-name');
         const exit = document.querySelector('.set-name__close');
         const form = document.forms['update-name'];
-        const goBack = document.querySelector('.curent-data__menu');
+        const goBack = document.querySelector('.curent-user__menu');
 
         goBack.addEventListener('click', (e) => {
             localStorage.setItem('goBack', 'yes');
@@ -948,8 +1011,8 @@ function dataUser() {
         });
 
         userNameFix.addEventListener('click', (e) => {
-            const id = e.target.closest('.curent-data__curent').dataset.id;
-            const curentName = e.target.closest('.curent-data__curent').dataset.name;
+            const id = e.target.closest('.curent-user__left').dataset.id;
+            const curentName = e.target.closest('.curent-user__left').dataset.name;
             console.log('ID >>> ',id);
             console.log('Name >>> ',curentName);
             popup.style.display = 'block';
@@ -1698,6 +1761,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_input_password__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/input-password */ "./public/js/modules/input-password.js");
 /* harmony import */ var _modules_data_users__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/data-users */ "./public/js/modules/data-users.js");
 /* harmony import */ var _modules_data_user__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/data-user */ "./public/js/modules/data-user.js");
+/* harmony import */ var _modules_change_info__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/change-info */ "./public/js/modules/change-info.js");
+
 
 
 
@@ -1718,6 +1783,7 @@ window.addEventListener('DOMContentLoaded', () => {
     (0,_modules_input_password__WEBPACK_IMPORTED_MODULE_6__["default"])();
     (0,_modules_data_users__WEBPACK_IMPORTED_MODULE_7__["default"])();
     (0,_modules_data_user__WEBPACK_IMPORTED_MODULE_8__["default"])();
+    (0,_modules_change_info__WEBPACK_IMPORTED_MODULE_9__["default"])();
 });
 
 })();

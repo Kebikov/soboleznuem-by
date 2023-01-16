@@ -1,7 +1,11 @@
 $color_blue: #07111d;
 
 .data-start {
-    width: 100%;
+    width: 700px;
+    margin: 0 auto;
+    @media (max-width: 1020px){
+        width: 90vw;
+    }
     // .data-start__body
     &__body {
         display: flex;
@@ -14,6 +18,9 @@ $color_blue: #07111d;
         font-weight: 400;
         font-size: 24px;
         text-decoration: none;
+        @media (max-width: 1020px){
+            font-size: 20px;
+        }
     }
     // .data-start__info
     &__info {
