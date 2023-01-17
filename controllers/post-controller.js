@@ -6,12 +6,25 @@ const postMain = async (req, res) => {
     let nameCurent = null;
     let addData = '';
 
-    const sqlSelectIdMatch = `
-        SELECT name
+    // match IP
+    const queryIpMatch = `
+        SELECT ip
         FROM node_ip
-        WHERE user_local_id = '${id}'
-        AND name != 'null'`;
+        WHERE ip = INET_ATON('${ip}')
+        AND status != 0`;
+    async function getIpMatch() {
+        const [rows] = await promisePool.query(queryIpMatch);
+        return rows;
+    }
 
+    // match id
+    const sqlSelectIdMatch = `
+    SELECT name
+    FROM node_ip
+    WHERE user_local_id = '${id}'
+    AND name != 'null'`;
+    const ipMatch = await getIpMatch();
+    const ipStatus = ipMatch.length > 0 ? 1 : 0;
     async function getNames() {
         const [rows] = await promisePool.query(sqlSelectIdMatch);
         return rows;
@@ -20,9 +33,9 @@ const postMain = async (req, res) => {
     const names = await getNames();
     if(names.length > 0) {
         nameCurent = names[0].name;
-        addData = `INSERT INTO node_ip (user_local_id, ip, city, lan, status, time, name) VALUES ('${id}', INET_ATON('${ip}'), '${city}', '${lan}', 0, CURTIME(), '${nameCurent}')`;
+        addData = `INSERT INTO node_ip (user_local_id, ip, city, lan, status, time, name) VALUES ('${id}', INET_ATON('${ip}'), '${city}', '${lan}', '${ipStatus}', CURTIME(), '${nameCurent}')`;
     }else{
-        addData = `INSERT INTO node_ip (user_local_id, ip, city, lan, status, time) VALUES ('${id}', INET_ATON('${ip}'), '${city}', '${lan}', 0, CURTIME())`;
+        addData = `INSERT INTO node_ip (user_local_id, ip, city, lan, status, time) VALUES ('${id}', INET_ATON('${ip}'), '${city}', '${lan}', '${ipStatus}', CURTIME())`;
     }
 
     pool.query(addData, (err, data) => {

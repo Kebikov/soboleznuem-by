@@ -33,11 +33,13 @@ $color_blue: #07111d;
     }
     &__info-body {
         flex: 0 1 80%;
-        background-color: #3B6475;
+        //background-color: #3B6475;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
         border-radius: 20px;
         text-align: center;
         padding: 20px 0px 20px 0px;
-        color: #fff;
+        color: #5B5B5B;
+        font-weight: 500;
     }
     // .data-start__replace
     &__replace {
@@ -50,10 +52,11 @@ $color_blue: #07111d;
     }
     &__replace-body {
         flex: 0 1 80%;
-        background-color: #3B6475;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
         border-radius: 20px;
         text-align: center;
         padding: 20px 0px 20px 0px;
-        color: #fff;
+        color: #5B5B5B;
+        font-weight: 500;
     }
 }
