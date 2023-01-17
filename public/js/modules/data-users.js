@@ -2,16 +2,6 @@
 function dataUsers() {
     const work = document.querySelector('[data-script="data-users"]');
     if(work) {
-        //* reload page
-        const go = localStorage.getItem('goBack');
-        const sendNewNameUser = localStorage.getItem('sendNewNameUser');
-    
-        if(go === 'yes' && sendNewNameUser === 'yes') {
-            localStorage.removeItem('goBack');
-            localStorage.removeItem('sendNewNameUser'); 
-            window.location.reload();  
-        }   
-
         //* main code
         const choiceDate = document.querySelector('.curent-data__menu');
         const form = document.forms['date-sort'];

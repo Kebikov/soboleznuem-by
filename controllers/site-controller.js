@@ -7,10 +7,19 @@ const getPageShopWreaths = (req, res) => {
     res.render(createPath('shop-wreaths'), {title,description});
 }
 
-const getPageBurial = (req, res) => {
+const getPageBurial = async (req, res) => {
     const title = 'Услуги захоронения в Минске';
     const description = '➤ Окажем помощь в организации всего процесса захоронения. Доступные цены на ритуальные услуги в Минске и Минской области.';
-    res.render(createPath('burial'), {title,description});
+
+    const queryTextHelp = `SELECT * FROM site_info`;
+    async function getTextHelp() {
+        const [rows] = await promisePool.query(queryTextHelp);
+        return rows;
+    }
+    const columtextHelp = await getTextHelp();
+    const siteInfo = columtextHelp[0];
+
+    res.render(createPath('burial'), {title,description, siteInfo});
 }
 
 const getPageCremation = (req, res) => {
@@ -115,10 +124,19 @@ const getPageCemeteryMinsk = (req, res) => {
     res.render(createPath('cemetery-minsk'), {title,description});
 }
 
-const getPageBurialAllowance = (req, res) => {
+const getPageBurialAllowance = async (req, res) => {
     const title = 'Пособие на погребение - размер пособия, документы для получения';
     const description = 'Какой актуальный размер пособия на погребение в Беларуси, как получить пособие для захоронения и какие документы для этого необходимы.';
-    res.render(createPath('burial-allowance'), {title,description});
+
+    const queryTextHelp = `SELECT * FROM site_info`;
+    async function getTextHelp() {
+        const [rows] = await promisePool.query(queryTextHelp);
+        return rows;
+    }
+    const columtextHelp = await getTextHelp();
+    const siteInfo = columtextHelp[0];
+
+    res.render(createPath('burial-allowance'), {title,description, siteInfo});
 }
 
 const getPageIfDied = (req, res) => {

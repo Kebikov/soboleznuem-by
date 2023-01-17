@@ -9,15 +9,31 @@ function dataUser() {
         const goBack = document.querySelector('.curent-user__menu');
 
         goBack.addEventListener('click', (e) => {
-            localStorage.setItem('goBack', 'yes');
-            window.history.back();
+            const time = document.querySelector('.time-choise').textContent;
+            console.log('T >>> ',time);
+            const day = +time.slice(0,2);
+            const month = +time.slice(3,5);
+            const year = +time.slice(6,10);
+
+            let form = document.createElement('form');
+            form.action = '/data-users';
+            form.method = 'POST';
+            form.style.display = 'none';
+
+            form.innerHTML = `
+            <input name="year" id="year" type="number" value="${year}" >
+            <input name="month" id="month" type="number" value="${month}" >
+            <input name="day" id="day" type="number" value="${day}" >`;
+
+            document.body.append(form);
+
+            form.submit();
         });
 
         bookmarkS.forEach(item => {
             item.addEventListener('click', (e) => {
                 const ip = e.target.dataset.ip;
                 const status = e.target.dataset.statusset;
-                console.log('Books >>> ', ip, status);
 
                 fetch('/update-status', {
                     method: 'POST',
@@ -38,8 +54,6 @@ function dataUser() {
         userNameFix.addEventListener('click', (e) => {
             const id = e.target.closest('.curent-user__left').dataset.id;
             const curentName = e.target.closest('.curent-user__left').dataset.name;
-            console.log('ID >>> ',id);
-            console.log('Name >>> ',curentName);
             popup.style.display = 'block';
             form.name.value = curentName;
 
@@ -52,11 +66,7 @@ function dataUser() {
 
         function submit(ev,id, curentName) {
             ev.preventDefault();
-            localStorage.setItem('sendNewNameUser', 'yes');
-            console.log('Submit ID >>> ', id, curentName);
-
             const newName = form.name.value;
-            console.log('NEW Name >>> ', newName);
             fetch('/update-name', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},

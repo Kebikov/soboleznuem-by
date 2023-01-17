@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="user__all-exit">
                                     Время:<br>
-                                    <span><%= item.time.toLocaleString('ru-RU') %></span>
+                                    <span class="time-choise"><%= item.time.toLocaleString('ru-RU') %></span>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                     </div>
                     <form name="update-name" action="/update-name" method="post" class="set-name__form">
                         <label for="name" class="set-name__lable">Правка имени:</label>
-                        <input name="name" id="name" type="text" class="set-name__input" >
+                        <input name="name" id="name" type="text" class="set-name__input v1" autocomplete="off" >
                         <button type="sabmit" class="set-name__button">ОТПРАВИТЬ</button>
                     </form>
                 </div>

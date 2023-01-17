@@ -43,7 +43,7 @@
                     </div>
                     <!-- текст:Перед захоронением -->
                     <div class="text-page container">
-                        <div class="text-page_margin">Перед захоронением оформляются все необходимые документы, приобретаются ритуальная символика, место на кладбище, организовываются поминки. Все эти процедуры отнимают немало времени и сил. Именно поэтому стоит обратиться в компанию, которая оказывает ритуальные услуги. Сколько стоят ритуальные услуги? Какая сумма необходима на погребение? Достаточно ли похоронных, выделенных государством?<br><br>Наша компания оказывает ритуальные услуги под ключ так, чтобы пособие покрывало стоимость похорон. Теперь не нужно думать о том, где взять денег, как вложиться в бюджет. Все это делаем мы за вас.<br><br>Сегодня выплата похоронных в Минске составляет  <span data-prace="">1476,3</span> руб . Мы предлагаем своим клиентам 3 пакета услуг разной стоимости.<br><br>В них входят следующее:</div>
+                        <div class="text-page_margin">Перед захоронением оформляются все необходимые документы, приобретаются ритуальная символика, место на кладбище, организовываются поминки. Все эти процедуры отнимают немало времени и сил. Именно поэтому стоит обратиться в компанию, которая оказывает ритуальные услуги. Сколько стоят ритуальные услуги? Какая сумма необходима на погребение? Достаточно ли похоронных, выделенных государством?<br><br>Наша компания оказывает ритуальные услуги под ключ так, чтобы пособие покрывало стоимость похорон. Теперь не нужно думать о том, где взять денег, как вложиться в бюджет. Все это делаем мы за вас.<br><br>Сегодня выплата похоронных в Минске составляет  <span><%= siteInfo['money'] %></span> руб . Мы предлагаем своим клиентам 3 пакета услуг разной стоимости.<br><br>В них входят следующее:</div>
                     </div>
                     <!-- Prais -->
                     <div class="box-prais">
@@ -56,7 +56,7 @@
                                         <div class="prais-list__sub-title">МИНИМАЛЬНЫЙ ПАКЕТ НЕОБХОДИМЫХ УСЛУГ</div>
                                     </div>
                                     <div class="prais-list__pay">
-                                        <div class="prais-list__byn">780<span> BYN</span></div>
+                                        <div class="prais-list__byn"><%= siteInfo['classic'] %><span> BYN</span></div>
                                         <div class="prais-list__byn-sub">полностью покрывается пособием на погребение</div>
                                     </div>
                                     <ul class="prais-list__list">
@@ -70,7 +70,7 @@
                                         <li class="prais-list__line"><span>Полное сопровождение похорон;</span></li>
                                     </ul>
                                     <div class="prais-list__button">заказать</div>
-                                    <div class="prais-list__ps" data-textPrace=""></div>
+                                    <div class="prais-list__ps" data-textPrace=""><%= siteInfo['text_help'] %></div>
                                 </div>
             
                             </div>
@@ -81,7 +81,7 @@
                                         <div class="prais-list__sub-title">ПЕРЕЧЕНЬ НЕОБХОДИМЫХ УСЛУГ</div>
                                     </div>
                                     <div class="prais-list__pay">
-                                        <div class="prais-list__byn">1050<span> BYN</span></div>
+                                        <div class="prais-list__byn"><%= siteInfo['standart'] %><span> BYN</span></div>
                                         <div class="prais-list__byn-sub">полностью покрывается пособием на погребение</div>
                                     </div>
                                     <ul class="prais-list__list">
@@ -96,7 +96,7 @@
                                         <li class="prais-list__line"><span>Полное сопровождение похорон;</span></li>
                                     </ul>
                                     <div class="prais-list__button">заказать</div>
-                                    <div class="prais-list__ps" data-textPrace=""></div>
+                                    <div class="prais-list__ps" data-textPrace=""><%= siteInfo['text_help'] %></div>
                                 </div>
                             </div>
                             <div class="prais__item">
@@ -106,7 +106,7 @@
                                         <div class="prais-list__sub-title">ОПТИМАЛЬНЫЙ НАБОР НЕОБХОДИМЫХ УСЛУГ</div>
                                     </div>
                                     <div class="prais-list__pay">
-                                        <div class="prais-list__byn">1350<span> BYN</span></div>
+                                        <div class="prais-list__byn"><%= siteInfo['classic_plus'] %><span> BYN</span></div>
                                         <div class="prais-list__byn-sub">полностью покрывается пособием на погребение</div>
                                     </div>
                                     <ul class="prais-list__list  __padding-3">
@@ -124,7 +124,7 @@
                                         <li class="prais-list__line"><span>Полное сопровождение похорон.</span></li>
                                     </ul>
                                     <div class="prais-list__button">заказать</div>
-                                    <div class="prais-list__ps" data-textPrace=""></div>
+                                    <div class="prais-list__ps" data-textPrace=""><%= siteInfo['text_help'] %></div>
                                 </div>
                             </div>
                         </div>

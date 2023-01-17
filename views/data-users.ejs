@@ -31,7 +31,7 @@
 
             <% if (arrInfo.length) { %>
                 <% arrInfo.forEach(({ id, countExitDay, countExitAll, name }) => { %>
-                    <a class="user" href="/data-user/<%= id %>" data-id="<%= id %>">
+                    <a class="user" href="/data-user/<%= id %>?date=<%= curentDate %>" data-id="<%= id %>">
                         <div class="user__body">
                             <div class="user__name">
                                 USER: <p class="tc-blue" ><%= name ? name : '' %></p><br>
@@ -70,13 +70,13 @@
                             <img src="/img/date/close.png" alt="#">
                         </div>
                         <label for="year" class="data-pop-up__lable">Введите год:</label>
-                        <input name="year" id="year" type="number" class="data-pop-up__input" placeholder="2023">
+                        <input name="year" id="year" type="number" class="data-pop-up__input" placeholder="2023" >
 
                         <label for="month" class="data-pop-up__lable">Введите месяц:</label>
-                        <input name="month" id="month" type="number" class="data-pop-up__input" placeholder="01">
+                        <input name="month" id="month" type="number" class="data-pop-up__input" placeholder="01" >
 
                         <label for="day" class="data-pop-up__lable">Введите день:</label>
-                        <input name="day" id="day" type="number" class="data-pop-up__input" placeholder="01">
+                        <input name="day" id="day" type="number" class="data-pop-up__input" placeholder="01" >
 
                         <button type="sabmit" class="data-pop-up__button">ОТПРАВИТЬ</button>
                     </form>

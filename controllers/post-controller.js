@@ -6,25 +6,28 @@ const postMain = async (req, res) => {
     let nameCurent = null;
     let addData = '';
 
-    // match IP
+    //* match IP 
     const queryIpMatch = `
         SELECT ip
         FROM node_ip
         WHERE ip = INET_ATON('${ip}')
         AND status != 0`;
+
     async function getIpMatch() {
         const [rows] = await promisePool.query(queryIpMatch);
         return rows;
     }
 
-    // match id
+    const ipMatch = await getIpMatch();
+    const ipStatus = ipMatch.length > 0 ? 1 : 0;
+
+    //*  match id 
     const sqlSelectIdMatch = `
     SELECT name
     FROM node_ip
     WHERE user_local_id = '${id}'
     AND name != 'null'`;
-    const ipMatch = await getIpMatch();
-    const ipStatus = ipMatch.length > 0 ? 1 : 0;
+    
     async function getNames() {
         const [rows] = await promisePool.query(sqlSelectIdMatch);
         return rows;
@@ -97,14 +100,21 @@ const postDataUsers = async (req, res) => {
 
 const getPageUserInfo = async (req, res) => {
     const id = req.params.id;
-    const selectUserInfo = `SELECT city,INET_NTOA(ip),lan,time,status,name FROM node_ip WHERE user_local_id = '${id}'`;
+    const date = req.query.date;
+    const day = date.slice(0,2);
+    const month = date.slice(3,5);
+    const year = date.slice(6,10);
+
+    const selectUserInfo = `SELECT city,INET_NTOA(ip),lan,time,status,name FROM node_ip 
+    WHERE user_local_id = '${id}'
+    AND DATE(time) = '${year}-${month}-${day}'`;
     async function getUserInfo() {
         const [rows] = await promisePool.query(selectUserInfo);
         return rows;
     }
     const infoUser = await getUserInfo();
-    const curentName = infoUser[0].name;
-    const title ='Admin';
+    const curentName = infoUser[0].name;  
+    const title ='Admin'; 
 
     res.render(createPath('data-user'), {id, infoUser, curentName, title});
 }
