@@ -866,7 +866,8 @@ __webpack_require__.r(__webpack_exports__);
 //= currentUser 
 async function currentUser() {
     let id = null;
-    const div = document.querySelector('.coffin-img');
+    const div = document.querySelector('[data-script="data-post"]');
+    console.log('',div);
     //delete localStorage.idLog;
 
     if(div) {
@@ -874,13 +875,11 @@ async function currentUser() {
         if(getId) {
             id = getId;
         }else{
-            console.log('устанавливаем id !');
             const currentId = (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])();
-            localStorage.setItem('idLog', currentId); 
+            localStorage.setItem('idLog', currentId);
             id = currentId;
         }
         getToken();
-        
     }; // if end
 
     //* getToken 

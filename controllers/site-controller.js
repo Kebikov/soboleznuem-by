@@ -202,6 +202,20 @@ const getPageDataChangeInfo = async (req, res) => {
     res.render(createPath('data-change-info'), {title, siteInfo});
 }
 
+const getPageMinsk = async (req, res) => {
+    const title = 'Ритуальные услуги в Минске - бюро похоронных услуг';
+    const description = '➤ Весь спектр похоронных услуг: захоронение, кремация, оформление места захоронения, копка могилы, услуги санитара-патологоанатома, подготовка тела к погребению.';
+    const queryTextHelp = `SELECT * FROM site_info`;
+    async function getTextHelp() {
+        const [rows] = await promisePool.query(queryTextHelp);
+        return rows;
+    }
+    const columtextHelp = await getTextHelp();
+    const siteInfo = columtextHelp[0];
+
+    res.render(createPath('minsk'), { title, description, siteInfo });
+}
+
 module.exports = {
     getPageContacts,
     getPageShopWreaths,
@@ -228,10 +242,11 @@ module.exports = {
     getPageMorguesInMinsk,
     getPageReviews,
     getPageCalc,
-    getPageAdminFilippov,
+    getPageAdminFilippov, 
     getPageDataStart,
     getPageDataUsers,
-    getPageDataChangeInfo
+    getPageDataChangeInfo,
+    getPageMinsk
 };
 
 
