@@ -30,7 +30,8 @@ const {
     getPageAdminFilippov,
     getPageDataStart,
     getPageDataUsers,
-    getPageDataChangeInfo
+    getPageDataChangeInfo,
+    getPageMinsk
 } = require('../controllers/site-controller');
 
 router.get('/contacts', getPageContacts);
@@ -62,5 +63,6 @@ router.get('/admin-filippov', getPageAdminFilippov);
 router.get('/data-start', getPageDataStart);
 router.get('/data-users', getPageDataUsers);
 router.get('/data-change-info', getPageDataChangeInfo);
+router.get('/minsk', getPageMinsk);
 
 module.exports = router;

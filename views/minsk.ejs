@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ru">
+
+<!--* head -->
+    <%- include('./modules/head.ejs') %>
+
+<body>
+
+    <!--* google-tag-noscript -->
+        <%- include('./modules/google-tag-noscript.ejs') %>
+
+    <div class="wrapper v">
+
+        <!--* heder -->
+            <%- include('./modules/header.ejs') %>
+
+        <!--= main -->
+        <main class="main">
+            <div data-script="data-post"></div>
+            <!--* pop-up-email -->
+                <%- include('./modules/pop-up-email.ejs') %>
+
+            <!-- img гроб -->
+            <div class="coffin-img container_img">
+                <picture>
+                <source srcset="img/home/grob-500.webp" type="image/webp" media="(max-width: 750px)">
+                <source srcset="img/home/grob-500.jpg" type="image/jpeg" media="(max-width: 750px)">
+                <source srcset="img/home/grob.webp" type="image/webp">
+                <img src="img/home/grob.jpg" alt="my_alt">
+                </picture>
+            </div>
+            <!-- соболезнуем-1 -->
+            <div class="box-text box_margin">
+                <span class="box-text__span span_margin">Искренне соболезнуем вам, если вас коснулось горе. Оказываем Все виды ритуальных услуг на протяжении 18 лет.</span>
+            </div>
+            <!-- три колонки -->
+            <div class="multi">
+                <div class="multi__item">
+                    <!-- cart-1 -->
+                    <div class="cart">
+                        <div class="cart__img">
+                            <picture>
+                            <source srcset="img/home/k1-350.webp" type="image/webp" media="(max-width: 750px)">
+                            <source srcset="img/home/k1-350.jpg" type="image/jpeg" media="(max-width: 750px)">
+                            <source srcset="img/home/k1.webp" type="image/webp">
+                            <img loading="lazy" src="img/home/k1.jpg" alt="my_alt">
+                            </picture>
+                        </div>
+                        <div class="cart__line"></div>
+                        <div class="cart__title">ЧТО ДЕЛАТЬ КОГДА УМЕР ЧЕЛОВЕК ?</div>
+                        <!-- <div class="cart__sub-title">Когда кто-то умирает, есть ряд вещей которые нужно сделать в первую очередь.</div> -->
+                        <a class="cart__botton" href="if-died">подробнее</a>
+                    </div>
+                </div>
+                <div class="multi__item">
+                    <!-- cart-2 -->
+                    <div class="cart cart_margin-2">
+                        <div class="cart__img">
+                            <picture>
+                            <source srcset="img/home/k2-350.webp" type="image/webp" media="(max-width: 750px)">
+                            <source srcset="img/home/k2-350.jpg" type="image/jpeg" media="(max-width: 750px)">
+                            <source srcset="img/home/k2.webp" type="image/webp">
+                            <img loading="lazy" src="img/home/k2.jpg" alt="my_alt">
+                            </picture>
+                        </div>
+                        <div class="cart__line"></div>
+                        <div class="cart__title">МАГАЗИН</div>
+                        <!-- <div class="cart__sub-title">Каталог всего необходимого для погребения и кремации.</div> -->
+                        <a class="cart__botton" href="shop-coffins">подробнее</a>
+                    </div>
+                </div>
+                <div class="multi__item">
+                    <!-- cart-3 -->
+                    <div class="cart  cart_margin-3">
+                        <div class="cart__img">
+                            <picture>
+                            <source srcset="img/home/k3-350.webp" type="image/webp" media="(max-width: 750px)">
+                            <source srcset="img/home/k3-350.jpg" type="image/jpeg" media="(max-width: 750px)">
+                            <source srcset="img/home/k3.webp" type="image/webp">
+                            <img loading="lazy" src="img/home/k3.jpg" alt="my_alt">
+                            </picture>
+                        </div>
+                        <div class="cart__line"></div>
+                        <div class="cart__title">КОНТАКТЫ РИТУАЛЬНЫХ АГЕНТОВ</div>
+                        <!-- <div class="cart__sub-title">Телефонные номера и иные способы связи, для получения незамедлительной помощи в тяжёлый момент.</div> -->
+                        <a class="cart__botton" href="contacts">подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <!-- соболезнуем-2 -->
+            <div class="box-text  box_margin-2">
+                <span class="box-text__span  span_margin-2">Кроме финансовой составляющей, нами безусловно движет то, что люди благодарят нас за оказанные услуги и рекомендуют нас знакомым…</span>
+            </div>
+            <!-- img рука -->
+            <div class="coffin-img container_img">
+                <picture>
+                <source srcset="img/home/r-1-500.webp" type="image/webp" media="(max-width: 750px)">
+                <source srcset="img/home/r-1-500.jpg" type="image/jpeg" media="(max-width: 750px)">
+                <source srcset="img/home/r-1.webp" type="image/webp">
+                <img loading="lazy" src="img/home/r-1.jpg" alt="my_alt">
+                </picture>
+            </div> 
+            <!-- соболезнуем-3 -->
+            <div class="box-text box_margin">
+                <span class="box-text__span span_margin">Если у Вас, есть какие-либо вопросы относительно наших услуг, пожалуйста, свяжитесь с нами.</span>
+            </div>
+            <!-- мулти блок -->
+            <div class="age-17" id="age17">
+
+                <div class="age-17__item-1">
+                    <div class="age-17__img-1">
+                        <picture>
+                            <source srcset="img/home/item-1-400.webp" type="image/webp" media="(max-width: 750px)">
+                            <source srcset="img/home/item-1-400.jpg" type="image/jpeg" media="(max-width: 750px)">
+                            <source srcset="img/home/item-1.webp" type="image/webp">
+                            <img loading="lazy" src="img/home/item-1.jpg" alt="my_alt">
+                        </picture>
+                    </div>
+                        <div class="age-17__title-1" id="age" data-time="2000" data-start="0" data-end="17">17+</div>
+                        <div class="age-17__sub-title-1">лет опыта работы</div>
+                </div>
+
+                <div class="age-17__item-2">
+                    <div class="age-17__img-2">
+                        <picture>
+                            <source srcset="img/home/item-2-400.webp" type="image/webp" media="(max-width: 750px)">
+                            <source srcset="img/home/item-2-400.jpg" type="image/jpeg" media="(max-width: 750px)">
+                            <source srcset="img/home/item-2.webp" type="image/webp">
+                            <img loading="lazy" src="img/home/item-2.jpg" alt="my_alt">
+                        </picture>
+                    </div>
+                </div>
+
+                <div class="age-17__item-3">
+                    <div class="age-17__title-3">Кратко о Нас</div>
+                    <div class="age-17__sub-title-3">МЫ ОКАЗЫВАЕМ ВСЕ ВИДЫ РИТУАЛЬНЫХ УСЛУГ С 2004 ГОДА.</div>
+                    <div class="age-17__line"></div>
+                    <div class="age-17__text-3">Вы не остаетесь с горем один на один, мы многие годы помогаем людям в трудные минуты их жизни, круглосуточная помошь и консультация по вопросам кремации и захоронения.</div>
+                    
+                    <div class="age-17__box-2040">
+                        <div class="age-17__left">
+                            <div class="age-17__2040">
+                                <div class="age-17__2040-title" id="burial" data-time="3000" data-start="0" data-end="2040">2 040+</div>
+                                <div class="age-17__2040-text">число захоронений</div>
+                            </div>
+                            <div class="age-17__1420">
+                                <div class="age-17__1420-title" id="cremation" data-time="3000" data-start="0" data-end="1420">1 420+</div>
+                                <div class="age-17__1420-text">число кремаций</div>
+                            </div>
+                            <div class="age-17__none-17">
+                                <div class="age-17__none-title" id="age1" data-time="2000" data-start="0" data-end="17">17+</div>
+                                <div class="age-17__none-text">лет опыта работы</div>
+                            </div>
+                        </div>
+                        <div class="age-17__right">
+                            <div class="age-17__right-img">
+                                <picture>
+                                    <source srcset="img/home/item-3-350.webp" type="image/webp" media="(max-width: 750px)">
+                                    <source srcset="img/home/item-3-350.jpg" type="image/jpeg" media="(max-width: 750px)">
+                                    <source srcset="img/home/item-3.webp" type="image/webp">
+                                    <img loading="lazy" src="img/home/item-3.jpg" alt="my_alt">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator">
+                <div class="calculator__body">
+                    <div class="calculator__img">
+                        <img src="/img/__calc/calc-icon.png" alt="calc">
+                    </div>
+                    <div class="calculator__discription">
+                        <div class="calculator__title">Калькулятор услуг</div>
+                        <div class="calculator__sub-title">Вы можете самостоятельно сформировать нужный вам пакет, выбрав необходимые услуги в калькуляторе.</div>
+                        <a class="calculator__button" href="calc"><span>расчитать</span></a>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!--= Prais -->
+            <div class="box-prais">
+            <div class="prais">
+                <div class="prais__item">
+
+                    <div class="prais-list">
+                        <div class="prais-list__heder">
+                            <div class="prais-list__title">CLASSIC</div>
+                            <div class="prais-list__sub-title">МИНИМАЛЬНЫЙ ПАКЕТ НЕОБХОДИМЫХ УСЛУГ</div>
+                        </div>
+                        <div class="prais-list__pay">
+                            <div class="prais-list__byn"><%= siteInfo['classic'] %><span> BYN</span></div>
+                            <div class="prais-list__byn-sub">полностью покрывается пособием на погребение</div>
+                        </div>
+                        <ul class="prais-list__list">
+                            <li class="prais-list__line"><span>Гроб социальный;</span></li>
+                            <li class="prais-list__line"><span>Крест с табличкой;</span></li>
+                            <li class="prais-list__line"><span>Услуги катафалка</span></li>
+                            <li class="prais-list__line"><span>Малый венок;</span></li>
+                            <li class="prais-list__line"><span>Доставка гроба и товаров;</span></li>
+                            <li class="prais-list__line"><span>Транспорт;</span></li>
+                            <li class="prais-list__line"><span>Сбор всех необходимых справок и документов;</span></li>
+                            <li class="prais-list__line"><span>Полное сопровождение похорон;</span></li>
+                        </ul>
+                        <a href="contacts" class="prais-list__button _pc-button">наши контакты</a>
+                        <a href="tel:+375447695139" class="prais-list__button _mobile-button"><span>позвонить</span></a>
+                        <!-- <div class="prais-list__button" data-popup="open" data-name-button="заказать CLASSIC">заказать звонок</div> -->
+                        <div class="prais-list__ps" data-textPrace=""><%= siteInfo['text_help'] %></div>
+                    </div>
+
+                </div>
+                <div class="prais__item">
+                    <div class="prais-list">
+                        <div class="prais-list__heder">
+                            <div class="prais-list__title">STANDART</div>
+                            <div class="prais-list__sub-title">ПЕРЕЧЕНЬ НЕОБХОДИМЫХ УСЛУГ</div>
+                        </div>
+                        <div class="prais-list__pay">
+                            <div class="prais-list__byn"><%= siteInfo['standart'] %><span> BYN</span></div>
+                            <div class="prais-list__byn-sub">полностью покрывается пособием на погребение</div>
+                        </div>
+                        <ul class="prais-list__list">
+                            <li class="prais-list__line"><span>Гроб социальный;</span></li>
+                            <li class="prais-list__line"><span>Крест с табличкой;</span></li>
+                            <li class="prais-list__line"><span>Венок стандартный или корзина, 2 шт.;</span></li>
+                            <li class="prais-list__line"><span>Доставка гроба и товаров;</span></li>
+                            <li class="prais-list__line"><span>Полная подготовка тела;</span></li>
+                            <li class="prais-list__line"><span>Транспорт;</span></li>
+                            <li class="prais-list__line"><span>Грузчики;</span></li>
+                            <li class="prais-list__line"><span>Сбор всех необходимых справок и документов;</span></li>
+                            <li class="prais-list__line"><span>Полное сопровождение похорон;</span></li>
+                        </ul>
+                        <a href="contacts" class="prais-list__button _pc-button">наши контакты</a>
+                        <a href="tel:+375447695139" class="prais-list__button _mobile-button"><span>позвонить</span></a>
+                        <!-- <div class="prais-list__button" data-popup="open" data-name-button="заказать STANDART">заказать звонок</div> -->
+                        <div class="prais-list__ps" data-textPrace=""><%= siteInfo['text_help'] %></div>
+                    </div>
+                </div>
+
+                <div class="prais__item">
+                    <div class="prais-list">
+                        <div class="prais-list__heder">
+                            <div class="prais-list__title">CLASSIC PLUS</div>
+                            <div class="prais-list__sub-title">ОПТИМАЛЬНЫЙ НАБОР НЕОБХОДИМЫХ УСЛУГ</div>
+                        </div>
+                        <div class="prais-list__pay">
+                            <div class="prais-list__byn"><%= siteInfo['classic_plus'] %><span> BYN</span></div>
+                            <div class="prais-list__byn-sub">полностью покрывается пособием на погребение</div>
+                        </div>
+                        <ul class="prais-list__list  __padding-3">
+                            <li class="prais-list__line"><span>Гроб обитый тканью;</span></li>
+                            <li class="prais-list__line"><span>Крест с табличкой;</span></li>
+                            <li class="prais-list__line"><span>Венок стандартный или корзина, 2 шт.;</span></li>
+                            <li class="prais-list__line"><span> Доставка гроба и товаров;</span></li>
+                            <li class="prais-list__line"><span> Полная подготовка тела;</span></li>
+                            <li class="prais-list__line"><span>Транспорт;</span></li>
+                            <li class="prais-list__line"><span>Грузчики;</span></li>
+                            <li class="prais-list__line"><span> Оформление места на кладбище;</span></li>
+                            <li class="prais-list__line"><span>Копка могилы, опускание гроба, формирование холма;</span></li>
+                            <li class="prais-list__line"><span> Шатёр для прощания;</span></li>
+                            <li class="prais-list__line"><span>Сбор всех необходимых справок и документов;</span></li>
+                            <li class="prais-list__line"><span>Полное сопровождение похорон.</span></li>
+                        </ul>
+                        <a href="contacts" class="prais-list__button _pc-button">наши контакты</a>
+                        <a href="tel:+375447695139" class="prais-list__button _mobile-button"><span>позвонить</span></a>
+                        <!-- <div class="prais-list__button" data-popup="open" data-name-button="заказать CLASSIC PLUS">заказать звонок</div> -->
+                        <div class="prais-list__ps" data-textPrace=""><%= siteInfo['text_help'] %></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="music">
+                <div class="music__body">
+                    <div class="music__icon">
+                            <img src="/img/home/instrument-icon.png" alt="music">
+                    </div>
+                    <div class="music__info">
+                        <div class="music__title">Музыкальное сопровождение похорон (профессиональные музыканты)</div>
+                        <ul class="music__discription">
+                            <li class="music__line">-малый состав;</li>
+                            <li class="music__line">-расширенный состав.</li>
+                        </ul>
+                        <div class="music__text">Подробности  - по телефонам, указанным на сайте.</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!--* footer -->
+            <%- include('./modules/footer.ejs') %>
+
+</body>
+</html>
