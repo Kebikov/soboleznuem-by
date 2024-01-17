@@ -1,21 +1,3 @@
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
-PassengerAppRoot "/home/pohorony/soboleznuem"
-PassengerBaseURI "/"
-PassengerNodejs "/home/pohorony/nodevenv/soboleznuem/16/bin/node"
-PassengerAppType node
-PassengerStartupFile app.js
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
-# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
-<IfModule Litespeed>
-SetEnv PORT 3306
-SetEnv TOKEN c223c6e91ea283
-SetEnv MYSQL_HOST localhost
-SetEnv MYSQL_DB pohorony_node_db
-SetEnv MYSQL_USER pohorony_gen
-SetEnv MYSQL_PASSWORD 574349Gen109126
-</IfModule>
-# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
